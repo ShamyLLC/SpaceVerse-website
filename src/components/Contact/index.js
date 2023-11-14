@@ -1,11 +1,10 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import noise from 'src/Images/noise.svg'
-import { useToast } from '../../contexts/ToastContext'
-import NewToast from '../../contexts/NewToast'
-import { addContactFormData } from '../../firebase/firestore'
-
+import noise from '@/Images/noise.svg'
+import { useToast } from '@/contexts/ToastContext'
+import NewToast from '@/contexts/NewToast'
+import { addContactFormData } from '@/firebase/firestore'
 export default function ContactComponent() {
   const [formData, setFormData] = useState({})
   const { toast, showToast, hideToast } = useToast()

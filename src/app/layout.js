@@ -1,7 +1,7 @@
 import React from 'react'
 import { FirebaseAuthProvider } from '@/contexts/firebaseAuthContext'
-import { ToastProvider } from '../contexts/ToastContext'
 import { ImageProvider } from '@/contexts/Imagecontext/imageContext'
+import { ToastProvider } from '@/contexts/ToastContext'
 
 export const metadata = {
   title: 'Main root of the Project',

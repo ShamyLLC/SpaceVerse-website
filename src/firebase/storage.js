@@ -1,6 +1,6 @@
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
-import { firebase } from './app'
+import firebase from '@/firebase/app';
 
 export const storage = getStorage(firebase)
 
