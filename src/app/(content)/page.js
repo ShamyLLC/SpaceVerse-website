@@ -39,7 +39,7 @@ export default function Home() {
   }
 
   return (
-    <main className=" mx-auto min-h-screen flex-col relative ">
+    <main className=" mx-auto  flex-col relative ">
       <div className="w-full lg:h-[810px] h-[450px] relative flex justify-center items-center  z-10">
         {isPlaying ? (
           <iframe

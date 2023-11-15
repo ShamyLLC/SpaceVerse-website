@@ -79,3 +79,16 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes countdown {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.countdown-line {
+  animation: countdown 3s linear forwards;
+}
+

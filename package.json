@@ -11,7 +11,7 @@
   "dependencies": {
     "@headlessui/react": "1.7.12",
     "@heroicons/react": "^2.0.18",
-    "@hubspot/api-client": "^9.0.0",
+    "@hubspot/api-client": "^9.1.1",
     "@novu/node": "^0.14.0",
     "@novu/notification-center": "^0.21.0",
     "@radix-ui/react-checkbox": "^1.0.4",

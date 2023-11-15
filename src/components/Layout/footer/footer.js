@@ -21,7 +21,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-black mt-5" aria-labelledby="footer-heading">
+    <footer className="bg-black mt-5 border-t-2 " aria-labelledby="footer-heading">
       <div className="max-w-7xl  mx-auto  md:justify-start justify-evenly lg:justify-evenly items-center overflow-hidden gap-8 bg-black lg:flex lg:flex-row flex flex-col p-4">
         <div className=" flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
           <Image src={clippath} width={50} height={50} alt="Clippath" />

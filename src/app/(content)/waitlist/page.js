@@ -1,15 +1,79 @@
-"use-client";
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import clippath from "src/Images/clippath.svg";
 import smslogo from "src/Images/sms.svg";
 import userlogo from "src/Images/user.svg";
 import arrowright from "src/Images/arrow-right.svg";
+import { useToast } from "@/contexts/ToastContext";
+import NewToast from "@/contexts/NewToast";
 
 const Waitlist = () => {
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const { toast, showToast, hideToast } = useToast();
+
+  const [validated, setValidated] = useState({
+    email: false,
+    fullName: false,
+  });
+
+  const validateForm = () => {
+    const newValidations = {
+      email: !email,
+      fullName: !fullName,
+    };
+
+    setValidated(newValidations);
+    return !Object.values(newValidations).includes(true);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (!validateForm()) {
+      showToast("Please fill all the required fields!.", "red");
+      setTimeout(() => {
+        setValidated({
+          email: false,
+          fullName: false,
+        });
+      }, 3200);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, fullName }),
+      });
+
+      if (response.ok) {
+        setEmail("");
+        setFullName("");
+        showToast("Successfully added to the waitlist!.", "green");
+      } else {
+        throw new Error("Failed to join the waitlist.");
+      }
+    } catch (error) {
+      showToast(error.message, "green");
+    }
+  };
+
   return (
-    <div className="flex justify-center items-center w-full h-screen bg-slate-900 p-4 lg:p-8">
-      <div className="p-8 lg:max-w-md   mx-auto flex flex-col justify-center items-center text-center h-auto relative bg-gradient-to-br from-black to-black rounded-lg border-2 border-white border-opacity-40 backdrop-blur-[60px]">
+    <div className="max-w-7xl m-auto   items-center w-full  bg-black lg:p-[9rem] p-4 ">
+      <div className="text-center items-center mx-auto flex  justify-end sm:justify-center">
+        {toast && (
+          <NewToast
+            message={toast.message}
+            onClose={hideToast}
+            color={toast.color}
+          />
+        )}
+      </div>
+      <div className="p-8  mt-2 lg:max-w-md   mx-auto flex flex-col justify-center items-center text-center h-auto relative bg-gradient-to-br from-black to-black rounded-lg border-2 border-white border-opacity-40 backdrop-blur-[60px]">
         <div className="flex flex-col justify-center sm:justify-start items-center gap-4 mb-4 sm:mb-0">
           <Image src={clippath} width={60} height={60} alt="Clippath" />
           <div className="w-full text-white text-lg lg:text-xl font-bold leading-none">
@@ -25,8 +89,19 @@ const Waitlist = () => {
               </div>
               <input
                 type="email"
-                className="block w-full h-[50px] bg-transparent rounded-md border-0 py-1.5 pl-10 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6"
                 placeholder="Your Email Here"
+                onChange={(e) => {
+                  setEmail(e.target.value),
+                    setValidated((prev) => ({ ...prev, email: false }));
+                }}
+                value={email}
+                className={`block w-full rounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
+                    ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                    focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 ${
+                      validated.email === true
+                        ? "border-red-500 border-2"
+                        : "border-slate-600"
+                    }`}
               />
             </div>
           </div>
@@ -36,13 +111,27 @@ const Waitlist = () => {
                 <Image src={userlogo} alt="userlogo" />
               </div>
               <input
-                type="text"
-                className="block w-full h-[50px] bg-transparent rounded-md border-0 py-1.5 pl-10 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6"
-                placeholder="Full Name"
+                type=""
+                placeholder="Your Full-Name Here"
+                onChange={(e) => {
+                  setFullName(e.target.value),
+                    setValidated((prev) => ({ ...prev, fullName: false }));
+                }}
+                value={fullName}
+                className={`block w-full rounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
+                    ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                    focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 ${
+                      validated.fullName === true
+                        ? "border-red-500 border-2"
+                        : "border-slate-600"
+                    }`}
               />
             </div>
           </div>
-          <button className="mt-4 lg:mt-6 flex justify-center items-center py-2 px-4 border border-white rounded-md text-white text-base font-medium leading-normal">
+          <button
+            className="mt-4 lg:mt-6 flex justify-center items-center py-2 px-4 border border-white rounded-md text-white text-base font-medium leading-normal"
+            onClick={handleSubmit}
+          >
             Join Waitlist
             <Image src={arrowright} alt="arrowright" />
           </button>

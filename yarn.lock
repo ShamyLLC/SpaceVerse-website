@@ -661,7 +661,7 @@
   resolved "https://registry.npmjs.org/@heroicons/react/-/react-2.0.18.tgz"
   integrity sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==
 
-"@hubspot/api-client@^9.0.0":
+"@hubspot/api-client@^9.1.1":
   version "9.1.1"
   resolved "https://registry.npmjs.org/@hubspot/api-client/-/api-client-9.1.1.tgz"
   integrity sha512-39Jq4fQgH2BiSLpTFdUNNgzQW96e2S2i4FjBoE8TUcV07dBKvrfRDOHOwmdNu2RurDXscMlPXHsnowSj7djA1g==
