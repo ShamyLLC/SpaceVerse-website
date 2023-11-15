@@ -8,6 +8,8 @@ export async function POST(request) {
   const email = body.email;
   const fullName = body.fullName;
 
+  
+
   const pageUri = 'https://your-waitlist-page-url.com/';
 
   const properties = {
