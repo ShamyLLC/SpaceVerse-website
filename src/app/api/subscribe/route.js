@@ -8,21 +8,20 @@ export async function POST(request) {
   const email = body.email;
   const fullName = body.fullName;
 
-  const accessToken = process.env.NEXT_PUBLIC_HUBSPOT_ACCESS_TOKEN;
-  const PageUrl = "Page url here";
+  const pageUri = 'https://your-waitlist-page-url.com/';
 
   const properties = {
     email,
     firstname: fullName.split(" ")[0],
     lastname: fullName.split(" ").slice(1).join(" "),
-    website: PageUrl,
+    website: pageUri,
   };
 
   const SimplePublicObjectInputForCreate = { properties, associations: [] };
 
   try {
     const hubspotClient = new hubspot.Client({
-      accessToken: { accessToken },
+      accessToken: "pat-na1-6b46a0f5-1d75-4fcc-8b0e-785285508534",
     });
     const apiResponse = await hubspotClient.crm.contacts.basicApi.create(
       SimplePublicObjectInputForCreate
