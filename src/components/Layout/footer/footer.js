@@ -1,28 +1,28 @@
-'use client'
-import Link from 'next/link'
-import { navigation } from './config'
-import userlogo from 'src/Images/user.svg'
-import facebooklogo from 'src/Images/facebook.svg'
-import instalogo from 'src/Images/insta.svg'
-import gitlogo from 'src/Images/git.svg'
-import clippath from 'src/Images/clippath.svg'
-import twitterlogo from 'src/Images/twitter.svg'
-import smslogo from 'src/Images/sms.svg'
-import arrowright from 'src/Images/arrow-right.svg'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-import Image from 'next/image'
+"use client";
+import Link from "next/link";
+import { navigation } from "./config";
+import userlogo from "@/Images/user.svg";
+import facebooklogo from "@/Images/facebook.svg";
+import instalogo from "@/Images/insta.svg";
+import gitlogo from "@/Images/git.svg";
+import clippath from "@/Images/clippath.svg";
+import twitterlogo from "@/Images/twitter.svg";
+import smslogo from "@/Images/sms.svg";
+import arrowright from "@/Images/arrow-right.svg";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import Image from "next/image";
 
 export function Footer() {
-  const router = useRouter()
+  const router = useRouter();
 
   const handlewaitlist = () => {
-    router.push('/waitlist')
-  }
+    router.push("/waitlist");
+  };
 
   return (
-    <footer className="bg-gray-900 mt-5" aria-labelledby="footer-heading">
-      <div className="max-w-7xl  mx-auto border-t-2 border-slate-500 md:justify-start justify-evenly lg:justify-evenly items-center overflow-hidden gap-8 bg-black lg:flex lg:flex-row flex flex-col p-4">
+    <footer className="bg-black mt-5" aria-labelledby="footer-heading">
+      <div className="max-w-7xl  mx-auto  md:justify-start justify-evenly lg:justify-evenly items-center overflow-hidden gap-8 bg-black lg:flex lg:flex-row flex flex-col p-4">
         <div className=" flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
           <Image src={clippath} width={50} height={50} alt="Clippath" />
           <div className="md:w-[580px] md:h-[261px] flex-col justify-start items-start gap-[21px] inline-flex">
@@ -116,6 +116,9 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <div class="max-w-7xl mx-auto text-center  border-t-2 border-slate-500 text-gray-400 text-sm font-normal  leading-normal">
+        © Shamy Inc. Spaceverseai +1 (786) 940 - 4301. All rights reserved.
+      </div>
     </footer>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import { firebase } from './app'
+import firebase from '@/firebase/app';
 import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore'
 import { collection, addDoc } from 'firebase/firestore'
 
@@ -12,6 +12,12 @@ export const addContactFormData = async (formData) => {
     throw error
   }
 }
+
+export const updateUserDocs = async (userId, updatedObj) => {
+  const docRef = doc(firestore, 'users', userId);
+  await setDoc(docRef, updatedObj, { merge: true });
+};
+
 
 
 
