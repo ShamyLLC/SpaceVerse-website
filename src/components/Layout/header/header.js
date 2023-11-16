@@ -28,6 +28,11 @@ export function Header() {
     router.push("/waitlist");
   };
 
+  const handlehome = ()=> {
+    handleChangeImageClick(homelogo)
+    router.push("/")
+  }
+
   const [activeLink, setActiveLink] = useState(null);
 
   useEffect(() => {
@@ -54,20 +59,22 @@ export function Header() {
                 <div className="flex h-16 items-center justify-between space-x-5">
                   {/* Logo on the left */}
                   <div className="shrink-0  text-white z-20">
-                    <div className="flex justify-center sm:justify-start items-center gap-4 mb-4 sm:mb-0">
+                    <div className="flex justify-center sm:justify-start items-center gap-4 mb-4 sm:mb-0 ">
                       <Image
                         src={clippath}
                         width={20}
                         height={30}
                         alt="Clippath"
-                        className="sm:w-[20px]"
+                        className="sm:w-[20px] cursor-pointer z-20"
+                        onClick={handlehome}
                       />
                       <Image
                         src={vector}
                         width={200}
-                        className="sm:w-[250px]"
+                        className="sm:w-[250px] cursor-pointer z-20"
                         height={100}
                         alt="Vector"
+                        onClick={handlehome}
                       />
                     </div>
                   </div>
