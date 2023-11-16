@@ -5,6 +5,9 @@ import clippath from "src/Images/clippath.svg";
 import smslogo from "src/Images/sms.svg";
 import userlogo from "src/Images/user.svg";
 import arrowright from "src/Images/arrow-right.svg";
+import Ellipse5 from "@/Images/Ellipse5.svg";
+import Ellipse6 from "@/Images/Ellipse6.svg";
+import Ellipse7 from "@/Images/Ellipse7.svg";
 import { useToast } from "@/contexts/ToastContext";
 import NewToast from "@/contexts/NewToast";
 
@@ -64,6 +67,28 @@ const Waitlist = () => {
 
   return (
     <div className="max-w-7xl m-auto   items-center w-full  bg-black lg:p-[9rem] p-4 ">
+      <Image
+        src={Ellipse5}
+        layout="fill"
+        objectFit="cover"
+        className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+        alt="Background"
+      />
+       <Image
+        src={Ellipse6}
+        layout="fill"
+        objectFit="cover"
+        className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+        alt="Background"
+      />
+
+      <Image
+        src={Ellipse7}
+        layout="fill"
+        objectFit="cover"
+        className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+        alt="Background"
+      /> 
       <div className="text-center items-center mx-auto flex  justify-end sm:justify-center">
         {toast && (
           <NewToast

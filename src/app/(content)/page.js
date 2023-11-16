@@ -134,7 +134,7 @@ export default function Home() {
             <div className="z-20 max-w-7xl mx-auto p-4 relative flex flex-col justify-center items-center gap-8">
               <Image
                 src={starimg1}
-                className="absolute top-2 left-0  z-0"
+                className="absolute top-2 left-0  animate-pulse z-0"
                 alt="Background"
               />
               <Image
@@ -316,7 +316,7 @@ export default function Home() {
           />
           <Image
             src={starimg2}
-            className="absolute top-0 right-0  z-0"
+            className="absolute top-0 animate-pulse right-0  z-0"
             alt="Background"
           />
 
@@ -324,7 +324,7 @@ export default function Home() {
             <Image src={unrealisticglass} width={581} height={512} />
             <Image
               src={starimg}
-              className="absolute bottom-0 right-0  z-0"
+              className="absolute bottom-0 right-0 animate-pulse  z-0"
               alt="Background"
             />
           </div>
@@ -461,7 +461,7 @@ export default function Home() {
           <div className="relative flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
             <Image
               src={starimg1}
-              className="absolute top-2 right-0  z-0"
+              className="absolute top-2 right-0 animate-pulse  z-0"
               alt="Background"
             />
             <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
