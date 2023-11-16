@@ -110,14 +110,14 @@ export function Footer() {
             </div>
           </div>
           <div className="flex sm:w-[85%] lg:w-full  w-full m-auto items-center text-start justify-start ">
-            <button className="bg-transparent rounded-md shadow  border border-white justify-center items-center inline-flex p-2.5 my-2 sm:my-0">
+            <button className="bg-transparent cursor-pointer rounded-md shadow z-20  border border-white justify-center items-center inline-flex p-2.5 my-2 sm:my-0">
               <Image src={smslogo} alt="smslogo" className="text-white" />
               <span className="text-white ml-2 text-base font-medium leading-normal">
                 Send Email
               </span>
             </button>
             <button
-              class="ml-2 h-11 pl-4  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
+              class="ml-2 h-11 pl-4  py-2.5 sm:pr-2 pr-1 z-20 cursor-pointer  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
               onClick={handlewaitlist}
             >
               <span class="text-white text-base font-medium  leading-normal">
