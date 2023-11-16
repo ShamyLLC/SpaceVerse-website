@@ -120,12 +120,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative overflow-x-hidden ">
+      <div className="relative overflow-x-hidden  ">
         <Image
           src={Groupspaceverse}
           layout="fill"
           objectFit="cover"
-          className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+          className="absolute left-10 opacity-20 border-none  z-0"
           alt="Background"
         />
 
@@ -168,7 +168,7 @@ export default function Home() {
                 cosmos?
               </div>
               <button
-                class=" w-fit h-11 pl-4 mt-2 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
+                class=" w-fit h-11 pl-4 mt-2 z-20 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
                 onClick={handlewaitlist}
               >
                 <span class="text-white text-base font-medium  leading-normal">
@@ -311,7 +311,7 @@ export default function Home() {
             src={Groupglass}
             layout="fill"
             objectFit="cover"
-            className="absolute opacity-50 border-none mix-blend-initial z-0"
+            className="absolute opacity-30 border-none  z-0"
             alt="Background"
           />
           <Image
@@ -412,7 +412,7 @@ export default function Home() {
             src={Ellipsenew}
             width="581px"
             height="394px"
-            className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+            className="absolute left-10 opacity-20 border-none mix-blend-initial z-0"
             alt="Background"
           />
 
@@ -446,7 +446,7 @@ export default function Home() {
               </div>
             </div>
             <button
-              class=" w-fit h-11 pl-4 mt-2 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
+              class=" w-fit h-11 pl-4 mt-2 z-20 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
               onClick={handlewaitlist}
             >
               <span class="text-white text-base font-medium  leading-normal">
