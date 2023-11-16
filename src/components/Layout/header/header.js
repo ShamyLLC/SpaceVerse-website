@@ -57,15 +57,16 @@ export function Header() {
                   <div className="flex justify-center sm:justify-start items-center gap-4 mb-4 sm:mb-0">
                     <Image
                       src={clippath}
-                      width={24}
-                      height={24}
+                      width={20}
+                      height={30}
                       alt="Clippath"
+                      className="sm:w-[20px]"
                     />
-                    <Image src={vector} width={200} height={100} alt="Vector" />
+                    <Image src={vector} width={200} className="sm:w-[250px]" height={100} alt="Vector" />
                   </div>
                 </div>
 
-                {/* Centered navigation links */}
+                {/* Centeblue navigation links */}
                 <div className="flex-1 flex items-center justify-center  text-white z-20 ">
                   <div className="hidden sm:flex sm:space-x-8">
                     <a
@@ -73,10 +74,8 @@ export function Header() {
                       onClick={() => {
                         handleChangeImageClick(homelogo), setActiveLink("home");
                       }}
-                      className={`text-base font-medium  cursor-pointer leading-normal ${
-                        activeLink === "home"
-                          ? "text-red-600 underline"
-                          : "text-white"
+                      className={` text-lg font-medium  cursor-pointer leading-normal ${
+                        activeLink === "home" ? "text-blue-600 " : "text-white"
                       }`}
                     >
                       Home
@@ -86,10 +85,8 @@ export function Header() {
                         handleChangeImageClick(homelogo),
                           setActiveLink("about");
                       }}
-                      className={`text-base cursor-pointer font-medium leading-normal ${
-                        activeLink === "about"
-                          ? "text-red-600 underline"
-                          : "text-white"
+                      className={`text-lg  cursor-pointer font-medium leading-normal ${
+                        activeLink === "about" ? "text-blue-600 " : "text-white"
                       }`}
                     >
                       About us
@@ -99,9 +96,9 @@ export function Header() {
                         handleChangeImageClick(frame2),
                           setActiveLink("services");
                       }}
-                      className={`text-base cursor-pointer font-medium leading-normal ${
+                      className={`text-lg  cursor-pointer font-medium leading-normal ${
                         activeLink === "services"
-                          ? "text-red-600 underline"
+                          ? "text-blue-600 "
                           : "text-white"
                       }`}
                     >
@@ -113,11 +110,11 @@ export function Header() {
                 {/* Contact Us button on the right */}
                 <div className="hidden sm:ml-6 sm:block  text-white z-20 ">
                   <div className="w-fit   sm:inline-flex justify-end items-end">
-                    <button className="bg=transparent rounded-md shadow border border-white justify-center items-center inline-flex p-2.5 my-2 sm:my-0">
-                      <span
-                        className="text-white text-base font-medium leading-normal text-center"
-                        onClick={handlewaitlist}
-                      >
+                    <button
+                      class="ml-2 h-11 pl-4 pr-2  py-2.5 bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
+                      onClick={handlewaitlist}
+                    >
+                      <span class="text-white text-lg font-medium  leading-normal">
                         Join Waitlist
                       </span>
                       <Image src={arrowright} className="text-white"></Image>
@@ -150,10 +147,8 @@ export function Header() {
                   onClick={() => {
                     handleChangeImageClick(homelogo), setActiveLink("home");
                   }}
-                  className={`text-base font-medium leading-normal  block rounded-md bg-transparent px-3 py-2 z-20 text-white  ${
-                    activeLink === "home"
-                      ? "text-red-600 underline"
-                      : "text-white"
+                  className={`text-lg  font-medium leading-normal  block rounded-md bg-transparent px-3 py-2 z-20 text-white  ${
+                    activeLink === "home" ? "text-blue-600 " : "text-white"
                   }`}
                 >
                   Home
@@ -162,10 +157,8 @@ export function Header() {
                   onClick={() => {
                     handleChangeImageClick(homelogo), setActiveLink("about");
                   }}
-                  className={`text-base cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  ${
-                    activeLink === "about"
-                      ? "text-red-600 underline"
-                      : "text-white"
+                  className={`text-lg  cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  ${
+                    activeLink === "about" ? "text-blue-600 " : "text-white"
                   }`}
                 >
                   About us
@@ -175,20 +168,18 @@ export function Header() {
                     handleChangeImageClick(frame2), setActiveLink("services");
                   }}
                   className={`text-base cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  text-white z-20 ${
-                    activeLink === "services"
-                      ? "text-red-600 underline"
-                      : "text-white"
+                    activeLink === "services" ? "text-blue-600 " : "text-white"
                   }`}
                 >
                   Our Services
                 </a>
               </div>
               <div className="border-t-2 ml-2 border-white pb-3 pt-4 z-20 opacity-[99%] ">
-                <button className="bg=transparent rounded-md shadow border border-white justify-center items-center inline-flex p-2.5 my-2 sm:my-0">
-                  <span
-                    className="text-white text-base font-medium leading-normal text-center"
-                    onClick={handlewaitlist}
-                  >
+                <button
+                  class="ml-2 h-11 pl-4 pr-2  py-2.5 bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
+                  onClick={handlewaitlist}
+                >
+                  <span class="text-white text-lg font-medium  leading-normal">
                     Join Waitlist
                   </span>
                   <Image src={arrowright} className="text-white"></Image>

@@ -9,6 +9,7 @@ import clippath from "@/Images/clippath.svg";
 import twitterlogo from "@/Images/twitter.svg";
 import smslogo from "@/Images/sms.svg";
 import arrowright from "@/Images/arrow-right.svg";
+import Ellipsenew1 from "@/Images/Ellipsenew1.svg";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
@@ -21,8 +22,18 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-black mt-5 border-t-2 " aria-labelledby="footer-heading">
-      <div className="max-w-7xl  mx-auto  md:justify-start justify-evenly lg:justify-evenly items-center overflow-hidden gap-8 bg-black lg:flex lg:flex-row flex flex-col p-4">
+    <footer
+      className="bg-black mt-5 border-t-2 "
+      aria-labelledby="footer-heading"
+    >
+      <div className="max-w-7xl relative  mx-auto  md:justify-start justify-evenly lg:justify-evenly items-center overflow-hidden gap-8 bg-black lg:flex lg:flex-row flex flex-col p-4">
+        <Image
+          src={Ellipsenew1}
+          layout="fill"
+          objectFit="cover"
+          className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+          alt="Background"
+        />
         <div className=" flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
           <Image src={clippath} width={50} height={50} alt="Clippath" />
           <div className="md:w-[580px] md:h-[261px] flex-col justify-start items-start gap-[21px] inline-flex">
@@ -50,8 +61,8 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto justify-center items-start lg:gap-[21.37px] flex flex-col lg:ml-1">
-          <div className="xl:w-[481px] w-auto md:h-[234px] ">
+        <div className=" mx-auto w-full sm:w-[90%]  lg:w-full justify-start sm:justify-center item-start sm:items-center md:items-start   lg:gap-[21.37px] flex flex-col lg:ml-1">
+          <div className=" w-full mx-auto sm:w-[85%]  lg:w-full md:h-[234px] ">
             <div>
               <div className="relative mt-2 rounded-md shadow-sm">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -97,21 +108,21 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div className=" flex ">
-            <button className="bg=transparent rounded-md shadow ml-2 border border-white justify-center items-center inline-flex p-2.5 my-2 sm:my-0">
+          <div className="flex sm:w-[85%] lg:w-full  w-full m-auto items-center text-start justify-start ">
+            <button className="bg-transparent rounded-md shadow  border border-white justify-center items-center inline-flex p-2.5 my-2 sm:my-0">
               <Image src={smslogo} alt="smslogo" className="text-white" />
               <span className="text-white ml-2 text-base font-medium leading-normal">
                 Send Email
               </span>
             </button>
             <button
-              className="bg=transparent rounded-md shadow ml-2 border border-white justify-center items-center inline-flex p-2.5 my-2 sm:my-0"
+              class="ml-2 h-11 pl-4  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
               onClick={handlewaitlist}
             >
-              <span className="text-white text-base font-medium leading-normal text-center">
+              <span class="text-white text-base font-medium  leading-normal">
                 Join Waitlist
               </span>
-              <Image src={arrowright}></Image>
+              <Image src={arrowright} className="text-white"></Image>
             </button>
           </div>
         </div>
