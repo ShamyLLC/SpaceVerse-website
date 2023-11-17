@@ -22,19 +22,15 @@ export function Footer() {
   };
 
   return (
-    <footer
-      className="relative mt-5 border-t-2 "
-      aria-labelledby="footer-heading"
-    >
+    <footer className="relative mt-5  " aria-labelledby="footer-heading">
       <Image
-          src={Ellipsenew1}
-          layout="fill"
-          objectFit="cover"
-          className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
-          alt="Background"
-        />
+        src={Ellipsenew1}
+        layout="fill"
+        objectFit="cover"
+        className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+        alt="Background"
+      />
       <div className="max-w-7xl   mx-auto  md:justify-start justify-evenly lg:justify-evenly items-center overflow-hidden gap-8 bg-black lg:flex lg:flex-row flex flex-col p-4">
-        
         <div className=" flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
           <Image src={clippath} width={50} height={50} alt="Clippath" />
           <div className="md:w-[580px] md:h-[261px] flex-col justify-start items-start gap-[21px] inline-flex">
@@ -48,18 +44,11 @@ export function Footer() {
             </div>
           </div>
           <div className=" justify-start items-start gap-[17.96px] inline-flex">
-            <div className="justify-center items-center flex">
-              <Image src={facebooklogo} alt="facebooklogo"></Image>
-            </div>
-            <div className="justify-center items-center flex">
-              <Image src={instalogo} alt="instalogo"></Image>
-            </div>
-            <div className="justify-center items-center flex">
-              <Image src={twitterlogo} alt="twitterlogo"></Image>
-            </div>
-            <div className="justify-center items-center flex">
-              <Image src={gitlogo} alt="gitlogo"></Image>
-            </div>
+            <Image src={facebooklogo} alt="facebooklogo"></Image>
+
+            <Image src={instalogo} alt="instalogo"></Image>
+
+            <Image src={gitlogo} alt="gitlogo"></Image>
           </div>
         </div>
         <div className=" mx-auto w-full sm:w-[90%]  lg:w-full justify-start sm:justify-center item-start sm:items-center md:items-start   lg:gap-[21.37px] flex flex-col lg:ml-1">
@@ -76,7 +65,7 @@ export function Footer() {
                 </div>
                 <input
                   type="email"
-                  className="block text-white w-full h-[50px] bg-transparent rounded-md border-0 py-1.5 pl-10 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block text-white w-full h-[50px] bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border border-slate-300 border-opacity-20 backdrop-blur-mdrounded-md  py-1.5 pl-10   placeholder:text-gray-400  sm:text-sm sm:leading-6"
                   placeholder="Your Email Here"
                 />
               </div>
@@ -93,7 +82,7 @@ export function Footer() {
                 </div>
                 <input
                   type="text"
-                  className="block w-full text-white h-[50px] bg-transparent rounded-md border-0 py-1.5 pl-10 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block text-white w-full h-[50px] bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border border-slate-300 border-opacity-20 backdrop-blur-mdrounded-md  py-1.5 pl-10   placeholder:text-gray-400  sm:text-sm sm:leading-6"
                   placeholder="Full Name"
                 />
               </div>
@@ -103,24 +92,25 @@ export function Footer() {
                 <textarea
                   type="text"
                   rows={3}
-                  className="block w-full text-white bg-transparent rounded-md border-0 py-1.5 pl-10 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block  text-white w-full h-[100px] bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border border-slate-300 border-opacity-20 backdrop-blur-mdrounded-md  py-1.5 pl-10   placeholder:text-gray-400  sm:text-sm sm:leading-6"
                   placeholder="Message Here"
                 />
               </div>
             </div>
           </div>
           <div className="flex sm:w-[85%] lg:w-full  w-full m-auto items-center text-start justify-start ">
-            <button className="bg-transparent cursor-pointer rounded-md shadow z-20  border border-white justify-center items-center inline-flex p-2.5 my-2 sm:my-0">
-              <Image src={smslogo} alt="smslogo" className="text-white" />
-              <span className="text-white ml-2 text-base font-medium leading-normal">
-                Send Email
-              </span>
-            </button>
+            <div className="gradient-box">
+              <button class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md">
+                <span class="text-white text-base font-medium leading-normal">
+                  Send Email
+                </span>
+              </button>
+            </div>
             <button
-              class="ml-2 h-11 pl-4  py-2.5 sm:pr-2 pr-1 z-20 cursor-pointer  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
+              className="gradient-wait  ml-2 h-12  px-[17px] py-3 bg-gradient-to-r  from-stone-950 to-stone-950 rounded-md border border-cyan-400 backdrop-blur-[20px] justify-center items-center gap-2.5 inline-flex"
               onClick={handlewaitlist}
             >
-              <span class="text-white text-base font-medium  leading-normal">
+              <span className="text-white text-base font-medium  leading-normal">
                 Join Waitlist
               </span>
               <Image src={arrowright} className="text-white"></Image>
@@ -128,7 +118,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div class="max-w-7xl mx-auto text-center  border-t-2 border-slate-500 text-gray-400 text-sm font-normal  leading-normal">
+      <div class="max-w-7xl py-5 mx-auto text-center  border-t-2 border-slate-500 text-gray-400 text-sm font-normal  leading-normal">
         © Shamy Inc. Spaceverseai +1 (786) 940 - 4301. All rights reserved.
       </div>
     </footer>

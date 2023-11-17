@@ -30,6 +30,7 @@ import Ellipsenew from "@/Images/Ellipsenew.svg";
 import looper1 from "@/Images/looper1.svg";
 import looper2 from "@/Images/looper2.svg";
 import Groupspaceverse from "@/Images/Groupspaceverse.svg";
+import headerbackground from "src/Images/Header.png";
 
 import frame2 from "@/Images/Frame2.png";
 
@@ -99,15 +100,17 @@ export default function Home() {
                     placeholder="Enter your email"
                   />
                 </div>
-                <button
-                  class="sm:ml-2 w-fit h-11 pl-4 mt-2 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
-                  onClick={handlewaitlist}
-                >
-                  <span class="text-white text-base font-medium  leading-normal">
-                    Join Waitlist
-                  </span>
-                  <Image src={arrowright} className="text-white"></Image>
-                </button>
+                <div className="sm:ml-2 mt-2 sm:mt-0 gradient-box">
+                  <button
+                    class="gradient-boxbtn  w-fit h-11 pl-4 mt-2 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow  justify-center items-center inline-flex"
+                    onClick={handlewaitlist}
+                  >
+                    <span class="text-white text-base font-medium  leading-normal">
+                      Join Waitlist
+                    </span>
+                    <Image src={arrowright} className="text-white"></Image>
+                  </button>
+                </div>
               </div>
             </div>
             <div
@@ -125,7 +128,7 @@ export default function Home() {
           src={Groupspaceverse}
           layout="fill"
           objectFit="cover"
-          className="absolute left-10 opacity-20 border-none  z-0"
+          className="absolute opacity-30 border-none  z-0"
           alt="Background"
         />
 
@@ -154,7 +157,7 @@ export default function Home() {
               />
 
               <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
-                <span className="text-center text-cyan-400  text-sm font-medium leading-tight">
+                <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
                   Spaceverse
                 </span>
               </button>
@@ -167,15 +170,18 @@ export default function Home() {
                 Are you ready to embark on an extraordinary journey through the
                 cosmos?
               </div>
+              <div className="gradient-box">
               <button
-                class=" w-fit h-11 pl-4 mt-2 z-20 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
+                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
                 onClick={handlewaitlist}
               >
-                <span class="text-white text-base font-medium  leading-normal">
+                <span class="text-white text-base font-medium leading-normal">
                   Join Waitlist
                 </span>
-                <Image src={arrowright} className="text-white"></Image>
+
+                <Image src={arrowright} alt="Arrow Right" class="text-white" />
               </button>
+            </div>
             </div>
           </div>
         </div>
@@ -185,8 +191,9 @@ export default function Home() {
             {/* Content Section */}
             <div className="flex flex-col justify-start items-start w-full gap-8">
               {/* Title and Description */}
-              <button className="px-4 py-2  bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
-                <span className="text-center text-cyan-400 text-sm font-medium leading-tight">
+
+              <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
+                <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
                   The Promise
                 </span>
               </button>
@@ -302,7 +309,7 @@ export default function Home() {
       <div className="relative max-w-7xl mx-auto overflow-hidden  ">
         <Image
           src={looper1}
-          style={{position:"absolute" , right:"0%" , zIndex:"10"}}
+          style={{ position: "absolute", right: "0%", zIndex: "10" }}
           className="absolute opacity-30 border-none mix-blend-initial z-0"
           alt="Background"
         />
@@ -330,9 +337,9 @@ export default function Home() {
           </div>
 
           <div className="relative   flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
-            <button className="px-4 z-20 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
-              <span className="text-center text-cyan-400 text-sm font-medium leading-tight">
-                Explore the Universe
+            <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
+              <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
+                Explore The Universe
               </span>
             </button>
 
@@ -350,22 +357,25 @@ export default function Home() {
                 fingertips, waiting to be explored.
               </div>
             </div>
-            <button
-              class=" w-fit z-20 h-11 pl-4 mt-2 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
-              onClick={handlewaitlist}
-            >
-              <span class="text-white text-base font-medium  leading-normal">
-                Join Waitlist
-              </span>
-              <Image src={arrowright} className="text-white"></Image>
-            </button>
+            <div className="gradient-box">
+              <button
+                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                onClick={handlewaitlist}
+              >
+                <span class="text-white text-base font-medium leading-normal">
+                  Join Waitlist
+                </span>
+
+                <Image src={arrowright} alt="Arrow Right" class="text-white" />
+              </button>
+            </div>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto justify-evenly items-center overflow-hidden gap-8 bg-black lg:flex lg:flex-row flex flex-col p-4">
           <div className=" flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
             <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
-              <span className="text-center text-cyan-400 text-sm font-medium leading-tight">
+              <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
                 Immersive Experience
               </span>
             </button>
@@ -383,18 +393,26 @@ export default function Home() {
                 the cosmos, SpaceVerse has something incredible to offer.
               </div>
             </div>
-            <button
-              class=" w-fit h-11 pl-4 mt-2 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
-              onClick={handlewaitlist}
-            >
-              <span class="text-white text-base font-medium  leading-normal">
-                Join Waitlist
-              </span>
-              <Image src={arrowright} className="text-white"></Image>
-            </button>
+            <div className="gradient-box">
+              <button
+                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                onClick={handlewaitlist}
+              >
+                <span class="text-white text-base font-medium leading-normal">
+                  Join Waitlist
+                </span>
+
+                <Image src={arrowright} alt="Arrow Right" class="text-white" />
+              </button>
+            </div>
           </div>
           <div className="w-full lg:w-fit justify-center flex items-center p-4 lg:p-0 mx-auto sm:mx-0">
-            <Image src={Rectangle621} style={{ zIndex:"20"}} width={581} height={512} />
+            <Image
+              src={Rectangle621}
+              style={{ zIndex: "20" }}
+              width={581}
+              height={512}
+            />
           </div>
         </div>
       </div>
@@ -426,8 +444,8 @@ export default function Home() {
           </div>
           <div className=" flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
             <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
-              <span className="text-center text-cyan-400 text-sm font-medium leading-tight">
-                Our Mission
+              <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
+                Immersive Experience
               </span>
             </button>
 
@@ -445,15 +463,18 @@ export default function Home() {
                 family, and fellow space enthusiasts.
               </div>
             </div>
-            <button
-              class=" w-fit h-11 pl-4 mt-2 z-20 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
-              onClick={handlewaitlist}
-            >
-              <span class="text-white text-base font-medium  leading-normal">
-                Join Waitlist
-              </span>
-              <Image src={arrowright} className="text-white"></Image>
-            </button>
+            <div className="gradient-box">
+              <button
+                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                onClick={handlewaitlist}
+              >
+                <span class="text-white text-base font-medium leading-normal">
+                  Join Waitlist
+                </span>
+
+                <Image src={arrowright} alt="Arrow Right" class="text-white" />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -465,7 +486,7 @@ export default function Home() {
               alt="Background"
             />
             <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
-              <span className="text-center text-cyan-400 text-sm font-medium leading-tight">
+              <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
                 About Us
               </span>
             </button>
@@ -484,24 +505,27 @@ export default function Home() {
                 closer to our souls.
               </div>
             </div>
-            <button
-              class=" w-fit h-11 pl-4 mt-2 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
-              onClick={handlewaitlist}
-            >
-              <span class="text-white text-base font-medium  leading-normal">
-                Join Waitlist
-              </span>
-              <Image src={arrowright} className="text-white"></Image>
-            </button>
+            <div className="gradient-box">
+              <button
+                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                onClick={handlewaitlist}
+              >
+                <span class="text-white text-base font-medium leading-normal">
+                  Join Waitlist
+                </span>
+
+                <Image src={arrowright} alt="Arrow Right" class="text-white" />
+              </button>
+            </div>
           </div>
           <div className="xl:w-[635.63px] xl:h-[300px] max-w-fit justify-center items-start sm:items-start lg:items-start  lg:gap-[21.37px] xl:flex-row flex flex-col md:w-full lg:ml-1">
-            <Image src={avatar} style={{zIndex:"30"}} alt="avatar"></Image>
+            <Image src={avatar} style={{ zIndex: "30" }} alt="avatar"></Image>
             <div className="lg:w-auto md:w-[580px] flex-col justify-start items-start  gap-[21px] inline-flex">
               <div className=" flex-col justify-start items-start gap-[3.59px] flex">
                 <div className=" text-white text-lg font-medium capitalize leading-snug">
                   Maria Bruna Moscatelli
                 </div>
-                <div className=" text-cyan-400 text-base font-medium leading-snug">
+                <div className="text-base font-medium leading-snug gradient-text">
                   Founder / CEO
                 </div>
               </div>
@@ -512,10 +536,7 @@ export default function Home() {
                 2018, and co-founded a VR startup for astronauts.
               </div>
               <div className=" justify-start items-start gap-[17.96px] inline-flex">
-                <div className="justify-center items-center flex">
-                  <Image src={twitterlogo} alt="twitterlogo"></Image>
-                </div>
-                <div className="justify-center items-center flex">
+                <div className="justify-center items-center cursor-pointer z-20 flex">
                   <Image src={linkedinlogo} alt="twitterlogo"></Image>
                 </div>
               </div>

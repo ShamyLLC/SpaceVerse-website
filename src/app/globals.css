@@ -92,3 +92,34 @@ html {
   animation: countdown 3s linear forwards;
 }
 
+.gradient-wait {
+  width:fit-content;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: linear-gradient(to right, black, black),
+    linear-gradient(to right, cyan, #9d50bb);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.gradient-box {
+  width:fit-content;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: linear-gradient(to right, black, black),
+    linear-gradient(to right, #9d50bb, cyan);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.gradient-boxbtn {
+  margin: 0; /* Resets any default margins */
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #9d50bb, cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}

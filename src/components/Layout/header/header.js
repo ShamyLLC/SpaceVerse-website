@@ -81,7 +81,7 @@ export function Header() {
 
                   {/* Centeblue navigation links */}
                   <div className="flex-1 flex items-center justify-center  text-white z-20 ">
-                    <div className="hidden sm:flex sm:space-x-8">
+                    <div className="hidden sm:flex sm:space-x-12">
                       <a
                         href={`${basePath}#home`}
                         onClick={() => {
