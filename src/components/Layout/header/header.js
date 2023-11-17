@@ -28,10 +28,10 @@ export function Header() {
     router.push("/waitlist");
   };
 
-  const handlehome = ()=> {
-    handleChangeImageClick(homelogo)
-    router.push("/")
-  }
+  const handlehome = () => {
+    handleChangeImageClick(homelogo);
+    router.push("/");
+  };
 
   const [activeLink, setActiveLink] = useState(null);
 
@@ -41,7 +41,6 @@ export function Header() {
 
   return (
     <header className="relative">
-      
       <div className="relative  ">
         <Image
           src={headerbackground}
@@ -50,8 +49,8 @@ export function Header() {
           className="absolute"
           alt="Background"
         />
-         <div  className="w-[46px] mx-auto h-1.5 bg-gradient-to-bl from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
-       
+        <div className="w-[46px] mx-auto h-1.5 bg-gradient-to-bl from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
+
         <Disclosure as="nav" style={{ zIndex: 20 }}>
           {({ open }) => (
             <>
@@ -128,15 +127,22 @@ export function Header() {
                   {/* Contact Us button on the right */}
                   <div className="hidden sm:ml-6 sm:block  text-white z-20 ">
                     <div className="w-fit   sm:inline-flex justify-end items-end">
-                      <button
-                        class="ml-2 h-11 pl-4 pr-2  py-2.5 bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
-                        onClick={handlewaitlist}
-                      >
-                        <span class="text-white text-lg font-medium  leading-normal">
-                          Join Waitlist
-                        </span>
-                        <Image src={arrowright} className="text-white"></Image>
-                      </button>
+                      <div className="gradient-box z-20">
+                        <button
+                          class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                          onClick={handlewaitlist}
+                        >
+                          <span class="text-white text-base font-medium leading-normal">
+                            Join Waitlist
+                          </span>
+
+                          <Image
+                            src={arrowright}
+                            alt="Arrow Right"
+                            class="text-white"
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
 
@@ -201,15 +207,22 @@ export function Header() {
                   </a>
                 </div>
                 <div className="border-t-2 ml-2 border-white pb-3 pt-4 z-20 opacity-[99%] ">
-                  <button
-                    class="ml-2 h-11 pl-4 pr-2  py-2.5 bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow border border-white justify-center items-center inline-flex"
-                    onClick={handlewaitlist}
-                  >
-                    <span class="text-white text-lg font-medium  leading-normal">
-                      Join Waitlist
-                    </span>
-                    <Image src={arrowright} className="text-white"></Image>
-                  </button>
+                  <div className="gradient-box z-20">
+                    <button
+                      class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                      onClick={handlewaitlist}
+                    >
+                      <span class="text-white text-base font-medium leading-normal">
+                        Join Waitlist
+                      </span>
+
+                      <Image
+                        src={arrowright}
+                        alt="Arrow Right"
+                        class="text-white"
+                      />
+                    </button>
+                  </div>
                 </div>
               </Disclosure.Panel>
             </>

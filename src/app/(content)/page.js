@@ -117,7 +117,7 @@ export default function Home() {
               className="w-14 h-14 mt-2 sm:mt-0 flex sm:justify-end"
               onClick={togglePlay}
             >
-              <Image src={groupname} alt="groupname"></Image>
+              <Image src={groupname} className=" cursor-pointer" alt="groupname"></Image>
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@ export default function Home() {
                 Are you ready to embark on an extraordinary journey through the
                 cosmos?
               </div>
-              <div className="gradient-box">
+              <div className="gradient-box z-20">
               <button
                 class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
                 onClick={handlewaitlist}
@@ -357,7 +357,7 @@ export default function Home() {
                 fingertips, waiting to be explored.
               </div>
             </div>
-            <div className="gradient-box">
+            <div className="gradient-box z-20">
               <button
                 class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
                 onClick={handlewaitlist}
@@ -393,7 +393,7 @@ export default function Home() {
                 the cosmos, SpaceVerse has something incredible to offer.
               </div>
             </div>
-            <div className="gradient-box">
+            <div className="gradient-box z-20">
               <button
                 class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
                 onClick={handlewaitlist}
@@ -463,7 +463,7 @@ export default function Home() {
                 family, and fellow space enthusiasts.
               </div>
             </div>
-            <div className="gradient-box">
+            <div className="gradient-box z-20">
               <button
                 class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
                 onClick={handlewaitlist}
@@ -505,7 +505,7 @@ export default function Home() {
                 closer to our souls.
               </div>
             </div>
-            <div className="gradient-box">
+            <div className="gradient-box z-20">
               <button
                 class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
                 onClick={handlewaitlist}
