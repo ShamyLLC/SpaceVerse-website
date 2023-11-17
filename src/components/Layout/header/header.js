@@ -64,13 +64,13 @@ export function Header() {
                         width={20}
                         height={30}
                         alt="Clippath"
-                        className="sm:w-[20px] cursor-pointer z-20"
+                        className="lg:w-[20px] cursor-pointer z-20"
                         onClick={handlehome}
                       />
                       <Image
                         src={vector}
                         width={200}
-                        className="sm:w-[250px] cursor-pointer z-20"
+                        className="lg:w-[250px] cursor-pointer z-20"
                         height={100}
                         alt="Vector"
                         onClick={handlehome}
@@ -80,7 +80,7 @@ export function Header() {
 
                   {/* Centeblue navigation links */}
                   <div className="flex-1 flex items-center justify-center  text-white z-20 ">
-                    <div className="hidden sm:flex sm:space-x-12">
+                    <div className="hidden sm:flex lg:space-x-12 sm:space-x-6">
                       <a
                         href={`${basePath}#home`}
                         onClick={() => {
@@ -127,9 +127,9 @@ export function Header() {
                   {/* Contact Us button on the right */}
                   <div className="hidden sm:ml-6 sm:block  text-white z-20 ">
                     <div className="w-fit   sm:inline-flex justify-end items-end">
-                      <div className="gradient-box z-20">
+                      <div className="gradient-box z-20 py-0">
                         <button
-                          class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                          class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 sm:py-2 md:py-2 py-2.5  sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
                           onClick={handlewaitlist}
                         >
                           <span class="text-white text-base font-medium leading-normal">
