@@ -98,7 +98,7 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div className="flex sm:w-[85%] lg:w-full  w-full m-auto items-center text-start justify-start ">
+          <div className="flex mt-2 sm:mt-0 sm:w-[85%] lg:w-full  w-full m-auto items-center text-start justify-start ">
             <div className="gradient-box">
               <button class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md">
                 <span class="text-white text-base font-medium leading-normal">

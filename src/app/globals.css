@@ -101,6 +101,15 @@ html {
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
 }
+.gradient-wait2 {
+  width: 100%;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: linear-gradient(to right, black, black),
+    linear-gradient(to right, #9d50bb, cyan);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
 
 .gradient-box {
   width:fit-content;

@@ -74,7 +74,7 @@ const Waitlist = () => {
         className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
         alt="Background"
       />
-       <Image
+      <Image
         src={Ellipse6}
         layout="fill"
         objectFit="cover"
@@ -88,7 +88,7 @@ const Waitlist = () => {
         objectFit="cover"
         className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
         alt="Background"
-      /> 
+      />
       <div className="text-center items-center mx-auto flex  justify-end sm:justify-center">
         {toast && (
           <NewToast
@@ -120,12 +120,12 @@ const Waitlist = () => {
                     setValidated((prev) => ({ ...prev, email: false }));
                 }}
                 value={email}
-                className={`block w-full rounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
-                    ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                className={`block w-full rounded-md  bg-gradient-to-r from-stone-950 to-stone-950 border border-opacity-20 backdrop-blur-mdrounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
+                     placeholder:text-gray-400 
                     focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 ${
                       validated.email === true
                         ? "border-red-500 border-2"
-                        : "border-slate-600"
+                        : "border-slate-300"
                     }`}
               />
             </div>
@@ -137,29 +137,36 @@ const Waitlist = () => {
               </div>
               <input
                 type=""
-                placeholder="Your Full-Name Here"
+                placeholder="Full Name"
                 onChange={(e) => {
                   setFullName(e.target.value),
                     setValidated((prev) => ({ ...prev, fullName: false }));
                 }}
                 value={fullName}
                 className={`block w-full rounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
-                    ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 
+                    placeholder:text-gray-400  bg-gradient-to-r from-stone-950 to-stone-950  border border-opacity-20 backdrop-blur-mdrounded-md
                     focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 ${
                       validated.fullName === true
-                        ? "border-red-500 border-2"
-                        : "border-slate-600"
+                        ? "border-red-500 border-2 "
+                        : "border-slate-300 "
                     }`}
               />
             </div>
           </div>
-          <button
-            className="mt-4 lg:mt-6 flex justify-center items-center py-2 px-4 border border-white rounded-md text-white text-base font-medium leading-normal"
-            onClick={handleSubmit}
-          >
-            Join Waitlist
-            <Image src={arrowright} alt="arrowright" />
-          </button>
+          <div className="w-[100%] ">
+            <div className="gradient-wait2 ">
+              <button
+                class=" gradient-boxbtn w-[100%] h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                onClick={handleSubmit}
+              >
+                <span class="text-white text-base font-medium leading-normal">
+                  Join Waitlist
+                </span>
+
+                <Image src={arrowright} alt="Arrow Right" class="text-white" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
