@@ -445,7 +445,7 @@ export default function Home() {
           <div className=" flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
             <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
               <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
-                Immersive Experience
+                Our Mission
               </span>
             </button>
 
