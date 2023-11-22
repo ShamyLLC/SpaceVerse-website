@@ -31,6 +31,8 @@ import looper1 from "@/Images/looper1.svg";
 import looper2 from "@/Images/looper2.svg";
 import Groupspaceverse from "@/Images/Groupspaceverse.svg";
 import headerbackground from "src/Images/Header.png";
+import React from 'react'
+import ReactPlayer from 'react-player'
 
 import frame2 from "@/Images/Frame2.png";
 
@@ -58,14 +60,11 @@ export default function Home() {
       <div className="w-full lg:h-[810px] h-[450px] relative flex justify-center items-center  z-10">
         {isPlaying ? (
           <iframe
-            ref={videoRef}
-            className="absolute z-0 inset-0 w-full h-full object-cover"
-            src="https://www.vidsplay.com/space-stars-free-stock-video/"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          src="https://drive.google.com/file/d/1Uf330OStkNW0IGfLag47FyR0HzM7pSAM/preview"
+          width="100%"
+          height="100%"
+          allowFullScreen
+        />
         ) : (
           <Image
             src={image}
