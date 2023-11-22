@@ -18,10 +18,14 @@ import { useImageContext } from "@/contexts/Imagecontext/imageContext";
 export function Header() {
   const router = useRouter();
   const [basePath, setbasePath] = useState("");
-  const { image, changeImage } = useImageContext();
+  const { image, vedio, changeImage, changeVedio } = useImageContext();
 
   const handleChangeImageClick = (newImage) => {
     changeImage(newImage);
+  };
+
+  const handleChangevedioClick = (vedios) => {
+    changeVedio(vedios);
   };
 
   const handlewaitlist = () => {
@@ -85,7 +89,8 @@ export function Header() {
                         href={`${basePath}#home`}
                         onClick={() => {
                           handleChangeImageClick(homelogo),
-                            setActiveLink("home");
+                            handleChangevedioClick(false);
+                          setActiveLink("home");
                         }}
                         className={` text-lg font-medium  cursor-pointer leading-normal ${
                           activeLink === "home"
@@ -97,8 +102,7 @@ export function Header() {
                       </a>
                       <a
                         onClick={() => {
-                          handleChangeImageClick(homelogo),
-                            setActiveLink("about");
+                          handleChangevedioClick(true), setActiveLink("about");
                         }}
                         className={`text-lg  cursor-pointer font-medium leading-normal ${
                           activeLink === "about"
@@ -111,6 +115,7 @@ export function Header() {
                       <a
                         onClick={() => {
                           handleChangeImageClick(frame2),
+                            handleChangevedioClick(false),
                             setActiveLink("services");
                         }}
                         className={`text-lg  cursor-pointer font-medium leading-normal ${

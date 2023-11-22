@@ -31,8 +31,8 @@ import looper1 from "@/Images/looper1.svg";
 import looper2 from "@/Images/looper2.svg";
 import Groupspaceverse from "@/Images/Groupspaceverse.svg";
 import headerbackground from "src/Images/Header.png";
-import React from 'react'
-import ReactPlayer from 'react-player'
+import React from "react";
+import ReactPlayer from "react-player";
 
 import frame2 from "@/Images/Frame2.png";
 
@@ -45,7 +45,7 @@ export default function Home() {
   const [activeLink, setActiveLink] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef();
-  const { image } = useImageContext();
+  const { image, vedio } = useImageContext();
 
   const handlewaitlist = () => {
     router.push("/waitlist");
@@ -58,13 +58,13 @@ export default function Home() {
   return (
     <main className=" mx-auto  flex-col relative ">
       <div className="w-full lg:h-[810px] h-[450px] relative flex justify-center items-center  z-10">
-        {isPlaying ? (
+        {isPlaying || vedio ? (
           <iframe
-          src="https://drive.google.com/file/d/1Uf330OStkNW0IGfLag47FyR0HzM7pSAM/preview"
-          width="100%"
-          height="100%"
-          allowFullScreen
-        />
+            src="https://drive.google.com/file/d/1Uf330OStkNW0IGfLag47FyR0HzM7pSAM/preview"
+            width="100%"
+            height="100%"
+            allowFullScreen
+          />
         ) : (
           <Image
             src={image}
@@ -116,7 +116,11 @@ export default function Home() {
               className="w-14 h-14 mt-2 sm:mt-0 flex sm:justify-end"
               onClick={togglePlay}
             >
-              <Image src={groupname} className=" cursor-pointer" alt="groupname"></Image>
+              <Image
+                src={groupname}
+                className=" cursor-pointer"
+                alt="groupname"
+              ></Image>
             </div>
           </div>
         </div>
@@ -170,17 +174,21 @@ export default function Home() {
                 cosmos?
               </div>
               <div className="gradient-box z-20">
-              <button
-                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
-                onClick={handlewaitlist}
-              >
-                <span class="text-white text-base font-medium leading-normal">
-                  Join Waitlist
-                </span>
+                <button
+                  class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                  onClick={handlewaitlist}
+                >
+                  <span class="text-white text-base font-medium leading-normal">
+                    Join Waitlist
+                  </span>
 
-                <Image src={arrowright} alt="Arrow Right" class="text-white" />
-              </button>
-            </div>
+                  <Image
+                    src={arrowright}
+                    alt="Arrow Right"
+                    class="text-white"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
