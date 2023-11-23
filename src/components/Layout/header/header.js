@@ -33,6 +33,7 @@ export function Header() {
   };
 
   const handlehome = () => {
+    changeVedio(false)
     handleChangeImageClick(homelogo);
     router.push("/");
   };
