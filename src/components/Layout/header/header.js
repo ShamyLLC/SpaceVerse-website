@@ -35,6 +35,7 @@ export function Header() {
   const handlehome = () => {
     changeVedio(false)
     handleChangeImageClick(homelogo);
+    setActiveLink("home")
     router.push("/");
   };
 
