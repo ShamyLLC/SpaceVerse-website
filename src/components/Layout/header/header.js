@@ -180,7 +180,9 @@ export function Header() {
                   <a
                     href={`${basePath}#home`}
                     onClick={() => {
-                      handleChangeImageClick(homelogo), setActiveLink("home");
+                      handleChangeImageClick(homelogo),
+                        handleChangevedioClick(false),
+                        setActiveLink("home");
                     }}
                     className={`text-lg  font-medium leading-normal  block rounded-md bg-transparent px-3 py-2 z-20 text-white  ${
                       activeLink === "home" ? "text-blue-600 " : "text-white"
@@ -190,7 +192,7 @@ export function Header() {
                   </a>
                   <a
                     onClick={() => {
-                      handleChangeImageClick(homelogo), setActiveLink("about");
+                      handleChangevedioClick(true), setActiveLink("about");
                     }}
                     className={`text-lg  cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  ${
                       activeLink === "about" ? "text-blue-600 " : "text-white"
@@ -200,7 +202,9 @@ export function Header() {
                   </a>
                   <a
                     onClick={() => {
-                      handleChangeImageClick(frame2), setActiveLink("services");
+                      handleChangeImageClick(frame2),
+                        handleChangevedioClick(false),
+                        setActiveLink("services");
                     }}
                     className={`text-base cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  text-white z-20 ${
                       activeLink === "services"

@@ -45,14 +45,20 @@ export default function Home() {
   const [activeLink, setActiveLink] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef();
-  const { image, vedio } = useImageContext();
+  const { image, vedio, changeImage, changeVedio } = useImageContext();
 
   const handlewaitlist = () => {
     router.push("/waitlist");
   };
 
   const togglePlay = () => {
-    setIsPlaying(!isPlaying);
+    if(vedio){
+      setIsPlaying(false)
+      changeVedio(false);
+    }
+    else {
+      setIsPlaying(!isPlaying);
+    }
   };
 
   return (
