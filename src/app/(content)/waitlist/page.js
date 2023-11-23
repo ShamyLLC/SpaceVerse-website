@@ -31,8 +31,10 @@ const Waitlist = () => {
     return !Object.values(newValidations).includes(true);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     if (!validateForm()) {
       showToast("Please fill all the required fields!.", "red");
       setTimeout(() => {
@@ -45,23 +47,32 @@ const Waitlist = () => {
     }
 
     try {
+      let firstname = fullName 
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, fullName }),
+        body: JSON.stringify({ email, firstname }),
       });
 
       if (response.ok) {
-        setEmail("");
-        setFullName("");
-        showToast("Successfully added to the waitlist!.", "green");
+        const data = await response.json();
+
+        if (data.message === "Email already exists in waitlist") {
+          showToast("Email already exists in waitlist.", "red");
+        } else if (data.message === "waitlist created successfully") {
+          setEmail("");
+          setFullName("");
+          showToast("Successfully added to the waitlist!", "green");
+        } else {
+          throw new Error("Failed to join the waitlist.");
+        }
       } else {
         throw new Error("Failed to join the waitlist.");
       }
     } catch (error) {
-      showToast(error.message, "green");
+      showToast(error.message, "red");
     }
   };
 
