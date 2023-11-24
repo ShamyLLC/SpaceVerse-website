@@ -1,42 +1,42 @@
-'use client'
-import Image from 'next/image'
-import arrowright from '@/Images/arrow-right.svg'
-import smslogo from '@/Images/sms.svg'
-import groupname from '@/Images/Group1261152761.svg'
-import content from '@/Images/Content.png'
-import content2 from '@/Images/conten2.png'
-import astauranut from '@/Images/astroanut.svg'
-import featurediconlogo from '@/Images/Featuredicon.svg'
-import featurediconlogo1 from '@/Images/Featuredicon1.svg'
-import featurediconlogo2 from '@/Images/Featuredicon2.svg'
-import featurediconlogo3 from '@/Images/Featuredicon3.svg'
-import unrealisticglass from '@/Images/unrealisticglass.svg'
-import Rectangle621 from '@/Images/Rectangle621.svg'
-import astauranut2 from '@/Images/astraunaut2.svg'
-import avatar from '@/Images/Avatar.svg'
-import twitterlogo from '@/Images/twitter.svg'
-import linkedinlogo from '@/Images/linkedin.svg'
-import homelogo from '@/Images/Home.svg'
-import frame2 from '@/Images/Frame2.png'
+"use client";
+import Image from "next/image";
+import arrowright from "@/Images/arrow-right.svg";
+import groupname from "@/Images/Group1261152761.svg";
+import content from "@/Images/Content.png";
+import content2 from "@/Images/conten2.png";
+import astauranut from "@/Images/astroanut.svg";
+import featurediconlogo from "@/Images/Featuredicon.svg";
+import featurediconlogo1 from "@/Images/Featuredicon1.svg";
+import featurediconlogo2 from "@/Images/Featuredicon2.svg";
+import featurediconlogo3 from "@/Images/Featuredicon3.svg";
+import unrealisticglass from "@/Images/unrealisticglass.svg";
+import Rectangle621 from "@/Images/Rectangle621.svg";
+import astauranut2 from "@/Images/astraunaut2.svg";
+import avatar from "@/Images/Avatar.svg";
+import twitterlogo from "@/Images/twitter.svg";
+import linkedinlogo from "@/Images/linkedin.svg";
+import homelogo from "@/Images/Home.svg";
+import frame2 from "@/Images/Frame2.png";
 
-import { useRouter } from 'next/navigation'
-import { useRef, useState } from 'react'
-import { useImageContext } from '@/contexts/Imagecontext/imageContext'
+import { useRouter } from "next/navigation";
+import { useRef, useState } from "react";
+import { useImageContext } from "@/contexts/Imagecontext/imageContext";
+import Sms from "@/Images/Sms";
 
 export default function Home() {
-  const router = useRouter()
-  const [activeLink, setActiveLink] = useState(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const videoRef = useRef()
-  const { image } = useImageContext()
+  const router = useRouter();
+  const [activeLink, setActiveLink] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef();
+  const { image } = useImageContext();
 
   const handlewaitlist = () => {
-    router.push('/waitlist')
-  }
+    router.push("/waitlist");
+  };
 
   const togglePlay = () => {
-    setIsPlaying(!isPlaying)
-  }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <main className=" mx-auto min-h-screen flex-col relative ">
@@ -75,7 +75,7 @@ export default function Home() {
               <div className="mt-2 sm:flex-row flex flex-col sm:w-full w-fit rounded-md shadow-sm">
                 <div className="relative  flex flex-grow  focus-within:z-10">
                   <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                    <Image src={smslogo} alt="smslogo"></Image>
+                    <Sms />
                   </div>
                   <input
                     type="email"
@@ -434,5 +434,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }

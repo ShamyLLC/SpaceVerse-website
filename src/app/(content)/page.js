@@ -1,27 +1,20 @@
 "use client";
 import Image from "next/image";
 import arrowright from "@/Images/arrow-right.svg";
-import smslogo from "@/Images/sms.svg";
 import groupname from "@/Images/Group1261152761.svg";
-import content from "@/Images/Content.png";
-import content2 from "@/Images/conten2.png";
 import astauranut from "@/Images/astroanut.svg";
 import featurediconlogo from "@/Images/Featuredicon.svg";
 import featurediconlogo1 from "@/Images/Featuredicon1.svg";
 import featurediconlogo2 from "@/Images/Featuredicon2.svg";
 import featurediconlogo3 from "@/Images/Featuredicon3.svg";
 import unrealisticglass from "@/Images/unrealisticglass.svg";
-
 import Rectangle621 from "@/Images/Rectangle621.svg";
 import astauranut2 from "@/Images/astraunaut2.svg";
-import backframe from "@/Images/backframe.png";
 import avatar from "@/Images/Avatar.svg";
-import twitterlogo from "@/Images/twitter.svg";
 import linkedinlogo from "@/Images/linkedin.svg";
 import starimg1 from "@/Images/star-img1.svg";
 import starimg from "@/Images/star-img.svg";
 import starimg2 from "@/Images/star-img2.svg";
-import homelogo from "@/Images/Home.svg";
 import Groupglass from "@/Images/Groupglass.svg";
 import Ellipse1 from "@/Images/Ellipse1.svg";
 import Ellipse2 from "@/Images/Ellipse2.svg";
@@ -30,15 +23,12 @@ import Ellipsenew from "@/Images/Ellipsenew.svg";
 import looper1 from "@/Images/looper1.svg";
 import looper2 from "@/Images/looper2.svg";
 import Groupspaceverse from "@/Images/Groupspaceverse.svg";
-import headerbackground from "src/Images/Header.png";
 import React from "react";
-import ReactPlayer from "react-player";
-
-import frame2 from "@/Images/Frame2.png";
 
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { useImageContext } from "@/contexts/Imagecontext/imageContext";
+import Sms from "@/Images/Sms";
 
 export default function Home() {
   const router = useRouter();
@@ -52,11 +42,10 @@ export default function Home() {
   };
 
   const togglePlay = () => {
-    if(vedio){
-      setIsPlaying(false)
+    if (vedio) {
+      setIsPlaying(false);
       changeVedio(false);
-    }
-    else {
+    } else {
       setIsPlaying(!isPlaying);
     }
   };
@@ -95,7 +84,7 @@ export default function Home() {
               <div className="mt-2 sm:flex-row flex flex-col sm:w-full w-fit rounded-md shadow-sm">
                 <div className="relative  flex flex-grow  focus-within:z-10">
                   <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                    <Image src={smslogo} alt="smslogo"></Image>
+                    <Sms />
                   </div>
                   <input
                     type="email"
@@ -107,13 +96,17 @@ export default function Home() {
                 </div>
                 <div className="sm:ml-2 mt-2 sm:mt-0 gradient-box">
                   <button
-                    class="gradient-boxbtn  w-fit h-11 pl-4 mt-2 sm:mt-0  py-2.5 sm:pr-2 pr-1  bg-gradient-to-bl from-cyan-400 to-violet-600 rounded-md shadow  justify-center items-center inline-flex"
+                    className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                     onClick={handlewaitlist}
                   >
-                    <span class="text-white text-base font-medium  leading-normal">
+                    <span className="text-white text-base font-medium leading-normal">
                       Join Waitlist
                     </span>
-                    <Image src={arrowright} className="text-white"></Image>
+                    <Image
+                      src={arrowright}
+                      alt="arrow"
+                      className="text-white"
+                    />
                   </button>
                 </div>
               </div>
@@ -181,7 +174,7 @@ export default function Home() {
               </div>
               <div className="gradient-box z-20">
                 <button
-                  class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                  className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                   onClick={handlewaitlist}
                 >
                   <span class="text-white text-base font-medium leading-normal">
@@ -372,7 +365,7 @@ export default function Home() {
             </div>
             <div className="gradient-box z-20">
               <button
-                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                 onClick={handlewaitlist}
               >
                 <span class="text-white text-base font-medium leading-normal">
@@ -408,7 +401,7 @@ export default function Home() {
             </div>
             <div className="gradient-box z-20">
               <button
-                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                 onClick={handlewaitlist}
               >
                 <span class="text-white text-base font-medium leading-normal">
@@ -478,7 +471,7 @@ export default function Home() {
             </div>
             <div className="gradient-box z-20">
               <button
-                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                 onClick={handlewaitlist}
               >
                 <span class="text-white text-base font-medium leading-normal">
@@ -520,7 +513,7 @@ export default function Home() {
             </div>
             <div className="gradient-box z-20">
               <button
-                class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                 onClick={handlewaitlist}
               >
                 <span class="text-white text-base font-medium leading-normal">

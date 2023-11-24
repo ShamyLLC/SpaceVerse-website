@@ -93,15 +93,26 @@ html {
 }
 
 .gradient-wait {
-  width:fit-content;
+  width: fit-content;
   border: 2px solid transparent;
   border-radius: 9px;
   background: linear-gradient(to right, black, black),
-    linear-gradient(to right, cyan, #9d50bb);
+    linear-gradient(225deg, #4457ff 14.89%, #00c2ff 85.85%);
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
 }
-.gradient-wait2 {
+
+.gradient-wait:hover {
+  width: fit-content;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: linear-gradient(to right, black, black),
+    linear-gradient(225deg, #4457ff 14.89%, #00c2ff 85.85%); /* Reversed gradient on hover */
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.gradient-waitlist {
   width: 100%;
   border: 2px solid transparent;
   border-radius: 9px;
@@ -111,12 +122,32 @@ html {
   background-origin: padding-box, border-box;
 }
 
-.gradient-box {
-  width:fit-content;
+.gradient-waitlist:hover {
+  width: 100%;
   border: 2px solid transparent;
   border-radius: 9px;
   background: linear-gradient(to right, black, black),
-    linear-gradient(to right, #9d50bb, cyan);
+    linear-gradient(225deg, #4457ff 14.89%, #00c2ff 85.85%); 
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.gradient-box {
+  width: fit-content;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: linear-gradient(to right, black, black),
+    linear-gradient(225deg, #00d1ff 14.89%, #713ffe 85.85%);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.gradient-box:hover {
+  width: fit-content;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: linear-gradient(to right, black, black),
+    linear-gradient(225deg, #4457ff 14.89%, #00c2ff 85.85%); /* Reversed gradient on hover */
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
 }

@@ -2,19 +2,21 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import clippath from "src/Images/clippath.svg";
-import smslogo from "src/Images/sms.svg";
-import userlogo from "src/Images/user.svg";
+
 import arrowright from "src/Images/arrow-right.svg";
 import Ellipse5 from "@/Images/Ellipse5.svg";
 import Ellipse6 from "@/Images/Ellipse6.svg";
 import Ellipse7 from "@/Images/Ellipse7.svg";
 import { useToast } from "@/contexts/ToastContext";
 import NewToast from "@/contexts/NewToast";
+import Sms from "@/Images/Sms";
+import UserLogo from "@/Images/UserLogo";
 
 const Waitlist = () => {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const { toast, showToast, hideToast } = useToast();
+  const [coloremail, setColorEmail] = useState("");
 
   const [validated, setValidated] = useState({
     email: false,
@@ -31,7 +33,6 @@ const Waitlist = () => {
     return !Object.values(newValidations).includes(true);
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -47,7 +48,7 @@ const Waitlist = () => {
     }
 
     try {
-      let firstname = fullName 
+      let firstname = fullName;
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: {
@@ -118,10 +119,14 @@ const Waitlist = () => {
           <div className="w-full text-slate-300 text-sm lg:text-base font-normal leading-snug">
             Embarking soon: The SpaceVerse odyssey awaits those on the waitlist.
           </div>
-          <div className="w-full">
+          <div
+            className="w-full"
+            onMouseOver={() => setColorEmail("email")}
+            onMouseLeave={() => setColorEmail("")}
+          >
             <div className="relative mt-2 rounded-md shadow-sm">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <Image src={smslogo} alt="smslogo" />
+                <Sms color={coloremail === "email" ? "#ffffff" : ""} />
               </div>
               <input
                 type="email"
@@ -131,7 +136,7 @@ const Waitlist = () => {
                     setValidated((prev) => ({ ...prev, email: false }));
                 }}
                 value={email}
-                className={`block w-full rounded-md  bg-gradient-to-r from-stone-950 to-stone-950 border border-opacity-20 backdrop-blur-mdrounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
+                className={`block w-full hover:placeholder:text-white rounded-md  bg-gradient-to-r from-stone-950 to-stone-950 border border-opacity-20 backdrop-blur-mdrounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
                      placeholder:text-gray-400 
                     focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 ${
                       validated.email === true
@@ -141,10 +146,14 @@ const Waitlist = () => {
               />
             </div>
           </div>
-          <div className="w-full">
+          <div
+            className="w-full"
+            onMouseOver={() => setColorEmail("fullname")}
+            onMouseLeave={() => setColorEmail("")}
+          >
             <div className="relative mt-2 rounded-md shadow-sm">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <Image src={userlogo} alt="userlogo" />
+                <UserLogo color={coloremail === "fullname" ? "#ffffff" : ""} />
               </div>
               <input
                 type=""
@@ -154,7 +163,7 @@ const Waitlist = () => {
                     setValidated((prev) => ({ ...prev, fullName: false }));
                 }}
                 value={fullName}
-                className={`block w-full rounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
+                className={`block hover:placeholder:text-white w-full rounded-md border-1 px-[17px] py-[13px] pl-10 bg-transparent text-white shadow-sm 
                     placeholder:text-gray-400  bg-gradient-to-r from-stone-950 to-stone-950  border border-opacity-20 backdrop-blur-mdrounded-md
                     focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 ${
                       validated.fullName === true
@@ -165,16 +174,15 @@ const Waitlist = () => {
             </div>
           </div>
           <div className="w-[100%] ">
-            <div className="gradient-wait2 ">
+            <div className="z-20 gradient-waitlist ">
               <button
-                class=" gradient-boxbtn w-[100%] h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                className="gradient-boxbtn w-[100%]   h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                 onClick={handleSubmit}
               >
-                <span class="text-white text-base font-medium leading-normal">
+                <span className="text-white text-base font-medium leading-normal">
                   Join Waitlist
                 </span>
-
-                <Image src={arrowright} alt="Arrow Right" class="text-white" />
+                <Image src={arrowright} alt="arrow" className="text-white" />
               </button>
             </div>
           </div>

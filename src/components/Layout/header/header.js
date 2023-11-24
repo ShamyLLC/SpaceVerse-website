@@ -33,13 +33,13 @@ export function Header() {
   };
 
   const handlehome = () => {
-    changeVedio(false)
+    changeVedio(false);
     handleChangeImageClick(homelogo);
-    setActiveLink("home")
+    setActiveLink("home");
     router.push("/");
   };
 
-  const [activeLink, setActiveLink] = useState(null);
+  const [activeLink, setActiveLink] = useState("home");
 
   useEffect(() => {
     setbasePath(window.location.origin);
@@ -96,7 +96,7 @@ export function Header() {
                         }}
                         className={` text-lg font-medium  cursor-pointer leading-normal ${
                           activeLink === "home"
-                            ? "text-blue-600 "
+                            ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
                             : "text-white"
                         }`}
                       >
@@ -108,7 +108,7 @@ export function Header() {
                         }}
                         className={`text-lg  cursor-pointer font-medium leading-normal ${
                           activeLink === "about"
-                            ? "text-blue-600 "
+                            ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
                             : "text-white"
                         }`}
                       >
@@ -122,7 +122,7 @@ export function Header() {
                         }}
                         className={`text-lg  cursor-pointer font-medium leading-normal ${
                           activeLink === "services"
-                            ? "text-blue-600 "
+                            ? " text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
                             : "text-white"
                         }`}
                       >
@@ -136,7 +136,7 @@ export function Header() {
                     <div className="w-fit   sm:inline-flex justify-end items-end">
                       <div className="gradient-box z-20 py-0">
                         <button
-                          class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 sm:py-2 md:py-2 py-2.5  sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                          className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                           onClick={handlewaitlist}
                         >
                           <span class="text-white text-base font-medium leading-normal">
@@ -187,7 +187,7 @@ export function Header() {
                         setActiveLink("home");
                     }}
                     className={`text-lg  font-medium leading-normal  block rounded-md bg-transparent px-3 py-2 z-20 text-white  ${
-                      activeLink === "home" ? "text-blue-600 " : "text-white"
+                      activeLink === "home" ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 " : "text-white"
                     }`}
                   >
                     Home
@@ -197,7 +197,7 @@ export function Header() {
                       handleChangevedioClick(true), setActiveLink("about");
                     }}
                     className={`text-lg  cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  ${
-                      activeLink === "about" ? "text-blue-600 " : "text-white"
+                      activeLink === "about" ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 " : "text-white"
                     }`}
                   >
                     About us
@@ -210,7 +210,7 @@ export function Header() {
                     }}
                     className={`text-base cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  text-white z-20 ${
                       activeLink === "services"
-                        ? "text-blue-600 "
+                        ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
                         : "text-white"
                     }`}
                   >
@@ -220,7 +220,7 @@ export function Header() {
                 <div className="border-t-2 ml-2 border-white pb-3 pt-4 z-20 opacity-[99%] ">
                   <div className="gradient-box z-20">
                     <button
-                      class=" gradient-boxbtn w-fit h-11 pl-4 mt-2 z-20  sm:mt-0 py-2.5 sm:pr-2 pr-1 bg-gradient-to-bl from-cyan-400 to-violet-600 justify-center items-center inline-flex rounded-md"
+                      className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
                       onClick={handlewaitlist}
                     >
                       <span class="text-white text-base font-medium leading-normal">
