@@ -55,12 +55,11 @@ export function Header() {
           className="absolute"
           alt="Background"
         />
-        <div className="w-[46px] mx-auto h-1.5 bg-gradient-to-bl from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
 
         <Disclosure as="nav" style={{ zIndex: 20 }}>
           {({ open }) => (
             <>
-              <div className="mx-auto  sm:py-5 md:px-5 px-2 py-5 sm:pl-2 lg:py-[24px] max-w-7xl  sm:px-2 lg:px-8 ">
+              <div className="mx-auto relative  sm:py-5 md:px-5 px-2 py-5 sm:pl-2 lg:py-[24px] max-w-7xl  sm:px-2 lg:px-8 ">
                 <div className="flex h-16 items-center justify-between space-x-5">
                   {/* Logo on the left */}
                   <div className="shrink-0  text-white z-20">
@@ -85,23 +84,28 @@ export function Header() {
                   </div>
 
                   {/* Centeblue navigation links */}
-                  <div className="flex-1 flex items-center justify-center  text-white z-20 ">
-                    <div className="hidden sm:flex lg:space-x-12 sm:space-x-6">
-                      <a
-                        href={`${basePath}#home`}
-                        onClick={() => {
-                          handleChangeImageClick(homelogo),
-                            handleChangevedioClick(false);
-                          setActiveLink("home");
-                        }}
-                        className={` text-lg font-medium  cursor-pointer leading-normal ${
-                          activeLink === "home"
-                            ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
-                            : "text-white"
-                        }`}
-                      >
-                        Home
-                      </a>
+                  <div className="flex-1 flex   items-center justify-center   text-white z-20 ">
+                    <div className="hidden   sm:flex lg:space-x-12 sm:space-x-6">
+                      <div className="">
+                        <a
+                          href={`${basePath}#home`}
+                          onClick={() => {
+                            handleChangeImageClick(homelogo),
+                              handleChangevedioClick(false);
+                            setActiveLink("home");
+                          }}
+                          className={` text-lg font-medium  cursor-pointer leading-normal ${
+                            activeLink === "home"
+                              ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
+                              : "text-white"
+                          }`}
+                        >
+                          {activeLink === "home" && (
+                            <div className="w-[46px] absolute top-0 mx-auto hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
+                          )}
+                          Home
+                        </a>
+                      </div>
                       <a
                         onClick={() => {
                           handleChangevedioClick(true), setActiveLink("about");
@@ -112,6 +116,9 @@ export function Header() {
                             : "text-white"
                         }`}
                       >
+                        {activeLink === "about" && (
+                          <div className="w-[46px] absolute ml-2 top-0 mx-auto hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
+                        )}
                         About us
                       </a>
                       <a
@@ -126,6 +133,9 @@ export function Header() {
                             : "text-white"
                         }`}
                       >
+                        {activeLink === "services" && (
+                          <div className="w-[46px] absolute top-0 ml-6 hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
+                        )}
                         Our Services
                       </a>
                     </div>
@@ -187,7 +197,9 @@ export function Header() {
                         setActiveLink("home");
                     }}
                     className={`text-lg  font-medium leading-normal  block rounded-md bg-transparent px-3 py-2 z-20 text-white  ${
-                      activeLink === "home" ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 " : "text-white"
+                      activeLink === "home"
+                        ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
+                        : "text-white"
                     }`}
                   >
                     Home
@@ -197,7 +209,9 @@ export function Header() {
                       handleChangevedioClick(true), setActiveLink("about");
                     }}
                     className={`text-lg  cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  ${
-                      activeLink === "about" ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 " : "text-white"
+                      activeLink === "about"
+                        ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
+                        : "text-white"
                     }`}
                   >
                     About us
