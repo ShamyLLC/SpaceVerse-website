@@ -14,6 +14,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { useImageContext } from "@/contexts/Imagecontext/imageContext";
+import { FadeIn } from "@/components/UI/Fade-In";
 
 export function Header() {
   const router = useRouter();
@@ -47,213 +48,216 @@ export function Header() {
 
   return (
     <header className="relative">
-      <div className="relative  ">
-        <Image
-          src={headerbackground}
-          layout="fill"
-          objectFit="cover"
-          className="absolute"
-          alt="Background"
-        />
+      <FadeIn>
+        <div className="relative  ">
+          <Image
+            src={headerbackground}
+            layout="fill"
+            objectFit="cover"
+            className="absolute"
+            alt="Background"
+          />
 
-        <Disclosure as="nav" style={{ zIndex: 20 }}>
-          {({ open }) => (
-            <>
-              <div className="mx-auto relative  sm:py-5 md:px-5 px-2 py-5 sm:pl-2 lg:py-[24px] max-w-7xl  sm:px-2 lg:px-8 ">
-                <div className="flex h-16 items-center justify-between space-x-5">
-                  {/* Logo on the left */}
-                  <div className="shrink-0  text-white z-20">
-                    <div className="flex justify-center sm:justify-start items-center gap-4 mb-4 sm:mb-0 ">
-                      <Image
-                        src={clippath}
-                        width={20}
-                        height={30}
-                        alt="Clippath"
-                        className="lg:w-[20px] cursor-pointer z-20"
-                        onClick={handlehome}
-                      />
-                      <Image
-                        src={vector}
-                        width={200}
-                        className="lg:w-[250px] cursor-pointer z-20"
-                        height={100}
-                        alt="Vector"
-                        onClick={handlehome}
-                      />
+          <Disclosure as="nav" style={{ zIndex: 20 }}>
+            {({ open }) => (
+              <>
+                <div className="mx-auto relative  sm:py-5 md:px-5 px-2 py-5 sm:pl-2 lg:py-[24px] max-w-7xl  sm:px-2 lg:px-8 ">
+                  <div className="flex h-16 items-center justify-between space-x-5">
+                    {/* Logo on the left */}
+                    <div className="shrink-0  text-white z-20">
+                      <div className="flex justify-center sm:justify-start items-center gap-4 mb-4 sm:mb-0 ">
+                        <Image
+                          src={clippath}
+                          width={20}
+                          height={30}
+                          alt="Clippath"
+                          className="lg:w-[20px] cursor-pointer z-20"
+                          onClick={handlehome}
+                        />
+                        <Image
+                          src={vector}
+                          width={200}
+                          className="lg:w-[250px] cursor-pointer z-20"
+                          height={100}
+                          alt="Vector"
+                          onClick={handlehome}
+                        />
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Centeblue navigation links */}
-                  <div className="flex-1 flex   items-center justify-center   text-white z-20 ">
-                    <div className="hidden   sm:flex lg:space-x-12 sm:space-x-6">
-                      <div className="">
+                    {/* Centeblue navigation links */}
+                    <div className="flex-1 flex   items-center justify-center   text-white z-20 ">
+                      <div className="hidden   sm:flex lg:space-x-12 sm:space-x-6">
+                        <div className="">
+                          <a
+                            href={`${basePath}#home`}
+                            onClick={() => {
+                              handleChangeImageClick(homelogo),
+                                handleChangevedioClick(false);
+                              setActiveLink("home");
+                            }}
+                            className={` text-lg font-medium  cursor-pointer leading-normal ${
+                              activeLink === "home"
+                                ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
+                                : "text-white"
+                            }`}
+                          >
+                            {activeLink === "home" && (
+                              <div className="w-[46px] absolute top-0 mx-auto hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
+                            )}
+                            Home
+                          </a>
+                        </div>
                         <a
-                          href={`${basePath}#home`}
                           onClick={() => {
-                            handleChangeImageClick(homelogo),
-                              handleChangevedioClick(false);
-                            setActiveLink("home");
+                            handleChangevedioClick(true),
+                              setActiveLink("about");
                           }}
-                          className={` text-lg font-medium  cursor-pointer leading-normal ${
-                            activeLink === "home"
+                          className={`text-lg  cursor-pointer font-medium leading-normal ${
+                            activeLink === "about"
                               ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
                               : "text-white"
                           }`}
                         >
-                          {activeLink === "home" && (
-                            <div className="w-[46px] absolute top-0 mx-auto hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
+                          {activeLink === "about" && (
+                            <div className="w-[46px] absolute ml-2 top-0 mx-auto hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
                           )}
-                          Home
+                          About us
+                        </a>
+                        <a
+                          onClick={() => {
+                            handleChangeImageClick(frame2),
+                              handleChangevedioClick(false),
+                              setActiveLink("services");
+                          }}
+                          className={`text-lg  cursor-pointer font-medium leading-normal ${
+                            activeLink === "services"
+                              ? " text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
+                              : "text-white"
+                          }`}
+                        >
+                          {activeLink === "services" && (
+                            <div className="w-[46px] absolute top-0 ml-6 hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
+                          )}
+                          Our Services
                         </a>
                       </div>
-                      <a
-                        onClick={() => {
-                          handleChangevedioClick(true), setActiveLink("about");
-                        }}
-                        className={`text-lg  cursor-pointer font-medium leading-normal ${
-                          activeLink === "about"
-                            ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
-                            : "text-white"
-                        }`}
-                      >
-                        {activeLink === "about" && (
-                          <div className="w-[46px] absolute ml-2 top-0 mx-auto hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
-                        )}
-                        About us
-                      </a>
-                      <a
-                        onClick={() => {
-                          handleChangeImageClick(frame2),
-                            handleChangevedioClick(false),
-                            setActiveLink("services");
-                        }}
-                        className={`text-lg  cursor-pointer font-medium leading-normal ${
-                          activeLink === "services"
-                            ? " text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
-                            : "text-white"
-                        }`}
-                      >
-                        {activeLink === "services" && (
-                          <div className="w-[46px] absolute top-0 ml-6 hidden sm:flex    h-1.5 bg-gradient-to-bl  from-cyan-400 to-purple-600 rounded-bl-sm rounded-br-sm z-20"></div>
-                        )}
-                        Our Services
-                      </a>
                     </div>
-                  </div>
 
-                  {/* Contact Us button on the right */}
-                  <div className="hidden sm:ml-6 sm:block  text-white z-20 ">
-                    <div className="w-fit   sm:inline-flex justify-end items-end">
-                      <div className="gradient-box z-20 py-0">
-                        <button
-                          className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
-                          onClick={handlewaitlist}
-                        >
-                          <span class="text-white text-base font-medium leading-normal">
-                            Join Waitlist
-                          </span>
+                    {/* Contact Us button on the right */}
+                    <div className="hidden sm:ml-6 sm:block  text-white z-20 ">
+                      <div className="w-fit   sm:inline-flex justify-end items-end">
+                        <div className="gradient-box z-20 py-0">
+                          <button
+                            className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
+                            onClick={handlewaitlist}
+                          >
+                            <span class="text-white text-base font-medium leading-normal">
+                              Join Waitlist
+                            </span>
 
-                          <Image
-                            src={arrowright}
-                            alt="Arrow Right"
-                            class="text-white"
-                          />
-                        </button>
+                            <Image
+                              src={arrowright}
+                              alt="Arrow Right"
+                              class="text-white"
+                            />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Mobile menu button */}
-                  <div className="-mr-2 flex sm:hidden">
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                      <span className="absolute -inset-0.5" />
-                      <span className="sr-only">Open main menu</span>
-                      {open ? (
-                        <XMarkIcon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <Bars3Icon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      )}
-                    </Disclosure.Button>
+                    {/* Mobile menu button */}
+                    <div className="-mr-2 flex sm:hidden">
+                      <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span className="absolute -inset-0.5" />
+                        <span className="sr-only">Open main menu</span>
+                        {open ? (
+                          <XMarkIcon
+                            className="block h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <Bars3Icon
+                            className="block h-6 w-6"
+                            aria-hidden="true"
+                          />
+                        )}
+                      </Disclosure.Button>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <Disclosure.Panel
-                className="sm:hidden z-20 "
-                style={{ display: "block", visibility: "20%" }}
-              >
-                <div className="space-y-1 px-2 pb-3 pt-2 z-20 opacity-[99%]">
-                  <a
-                    href={`${basePath}#home`}
-                    onClick={() => {
-                      handleChangeImageClick(homelogo),
-                        handleChangevedioClick(false),
-                        setActiveLink("home");
-                    }}
-                    className={`text-lg  font-medium leading-normal  block rounded-md bg-transparent px-3 py-2 z-20 text-white  ${
-                      activeLink === "home"
-                        ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
-                        : "text-white"
-                    }`}
-                  >
-                    Home
-                  </a>
-                  <a
-                    onClick={() => {
-                      handleChangevedioClick(true), setActiveLink("about");
-                    }}
-                    className={`text-lg  cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  ${
-                      activeLink === "about"
-                        ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
-                        : "text-white"
-                    }`}
-                  >
-                    About us
-                  </a>
-                  <a
-                    onClick={() => {
-                      handleChangeImageClick(frame2),
-                        handleChangevedioClick(false),
-                        setActiveLink("services");
-                    }}
-                    className={`text-base cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  text-white z-20 ${
-                      activeLink === "services"
-                        ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
-                        : "text-white"
-                    }`}
-                  >
-                    Our Services
-                  </a>
-                </div>
-                <div className="border-t-2 ml-2 border-white pb-3 pt-4 z-20 opacity-[99%] ">
-                  <div className="gradient-box z-20">
-                    <button
-                      className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
-                      onClick={handlewaitlist}
+                <Disclosure.Panel
+                  className="sm:hidden z-20 "
+                  style={{ display: "block", visibility: "20%" }}
+                >
+                  <div className="space-y-1 px-2 pb-3 pt-2 z-20 opacity-[99%]">
+                    <a
+                      href={`${basePath}#home`}
+                      onClick={() => {
+                        handleChangeImageClick(homelogo),
+                          handleChangevedioClick(false),
+                          setActiveLink("home");
+                      }}
+                      className={`text-lg  font-medium leading-normal  block rounded-md bg-transparent px-3 py-2 z-20 text-white  ${
+                        activeLink === "home"
+                          ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
+                          : "text-white"
+                      }`}
                     >
-                      <span class="text-white text-base font-medium leading-normal">
-                        Join Waitlist
-                      </span>
-
-                      <Image
-                        src={arrowright}
-                        alt="Arrow Right"
-                        class="text-white"
-                      />
-                    </button>
+                      Home
+                    </a>
+                    <a
+                      onClick={() => {
+                        handleChangevedioClick(true), setActiveLink("about");
+                      }}
+                      className={`text-lg  cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  ${
+                        activeLink === "about"
+                          ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
+                          : "text-white"
+                      }`}
+                    >
+                      About us
+                    </a>
+                    <a
+                      onClick={() => {
+                        handleChangeImageClick(frame2),
+                          handleChangevedioClick(false),
+                          setActiveLink("services");
+                      }}
+                      className={`text-base cursor-pointer font-medium leading-normal  block rounded-md bg-transparent px-3 py-2  text-white z-20 ${
+                        activeLink === "services"
+                          ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-cyan-400 "
+                          : "text-white"
+                      }`}
+                    >
+                      Our Services
+                    </a>
                   </div>
-                </div>
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
-      </div>
+                  <div className="border-t-2 ml-2 border-white pb-3 pt-4 z-20 opacity-[99%] ">
+                    <div className="gradient-box z-20">
+                      <button
+                        className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
+                        onClick={handlewaitlist}
+                      >
+                        <span class="text-white text-base font-medium leading-normal">
+                          Join Waitlist
+                        </span>
+
+                        <Image
+                          src={arrowright}
+                          alt="Arrow Right"
+                          class="text-white"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </Disclosure.Panel>
+              </>
+            )}
+          </Disclosure>
+        </div>
+      </FadeIn>
     </header>
   );
 }

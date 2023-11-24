@@ -29,6 +29,7 @@ import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { useImageContext } from "@/contexts/Imagecontext/imageContext";
 import Sms from "@/Images/Sms";
+import { FadeIn } from "@/components/UI/Fade-In";
 
 export default function Home() {
   const router = useRouter();
@@ -52,6 +53,7 @@ export default function Home() {
 
   return (
     <main className=" mx-auto  flex-col relative ">
+      <FadeIn>
       <div className="w-full lg:h-[810px] h-[450px] relative flex justify-center items-center  z-10">
         {isPlaying || vedio ? (
           <iframe
@@ -124,7 +126,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </FadeIn>
+      
 
+      <FadeIn>
       <div className="relative pt-5  overflow-x-hidden  ">
         <Image
           src={Groupspaceverse}
@@ -311,7 +316,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      </FadeIn>
+      
+      <FadeIn>
       <div className="relative   max-w-7xl mx-auto overflow-hidden  ">
         <Image
           src={looper1}
@@ -422,7 +429,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </FadeIn>
 
+      <FadeIn>
       <div className="  relative max-w-7xl mx-auto">
         <Image
           src={looper2}
@@ -550,6 +559,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </main>
   );
 }
