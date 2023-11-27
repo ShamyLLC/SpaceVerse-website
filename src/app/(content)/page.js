@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <main className=" mx-auto  flex-col relative ">
       <FadeIn>
-        <div className="w-full lg:h-[920px] h-[450px] relative flex justify-center items-center  z-10">
+        <div className="w-full lg:h-[910px] h-[450px] relative flex justify-center items-center  z-10">
           {isPlaying || vedio ? (
             <iframe
               src="https://drive.google.com/file/d/1Uf330OStkNW0IGfLag47FyR0HzM7pSAM/preview"

@@ -57,20 +57,17 @@ const Waitlist = () => {
         body: JSON.stringify({ email, firstname }),
       });
 
-      if (response.ok) {
+      if (response) {
         const data = await response.json();
-
-        if (data.message === "Email already exists in waitlist") {
-          showToast("Email already exists in waitlist.", "red");
-        } else if (data.message === "waitlist created successfully") {
+        if (data.status == 409) {
+          showToast(data.message, "red");
+        } else if (data.status === 200) {
           setEmail("");
           setFullName("");
           showToast("Successfully added to the waitlist!", "green");
         } else {
-          throw new Error("Failed to join the waitlist.");
+          showToast("Something went wrong!", "red");
         }
-      } else {
-        throw new Error("Failed to join the waitlist.");
       }
     } catch (error) {
       showToast(error.message, "red");

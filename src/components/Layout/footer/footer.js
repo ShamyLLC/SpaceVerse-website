@@ -78,20 +78,18 @@ export function Footer() {
           }),
         });
 
-        if (response.ok) {
+        if (response) {
           const data = await response.json();
-          if (data.message === "Email already exists in waitlist") {
-            alert("Email already exists in waitlist.");
-          } else if (data.message === "waitlist created successfully") {
+          if (data.status == 409) {
+            alert(data.message);
+          } else if (data.status === 200) {
             setEmail("");
             setName("");
-            setMessage("");
+            setMessage("")
             alert("Successfully added to the waitlist!");
           } else {
-            throw new Error("Failed to join the waitlist.");
+            alert("Something went wrong!");
           }
-        } else {
-          throw new Error("Failed to create/update waitlist");
         }
       } catch (error) {
         alert(error.message);
