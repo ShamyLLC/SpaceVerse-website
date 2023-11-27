@@ -12,14 +12,91 @@ import Ellipsenew1 from "@/Images/Ellipsenew1.svg";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import meta from "@/Images/meta.svg";
 import Sms from "@/Images/Sms";
 import UserLogo from "@/Images/UserLogo";
 
 export function Footer() {
   const router = useRouter();
   const [coloremail, setColorEmail] = useState("");
-  const handlewaitlist = () => {
-    router.push("/waitlist");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailValid, setEmailValid] = useState(false);
+  const [nameValid, setNameValid] = useState(false);
+  const [messageValid, setMessageValid] = useState(false);
+
+  const validateInput = () => {
+    let isValid = false;
+
+    if (email) {
+      setEmailValid(false);
+      isValid = true;
+    } else {
+      setEmailValid(true);
+      isValid = false;
+    }
+
+    if (name) {
+      setNameValid(false);
+      isValid = true;
+    } else {
+      setNameValid(true);
+      isValid = false;
+    }
+
+    if (message) {
+      setMessageValid(false);
+      isValid = true;
+    } else {
+      setMessageValid(true);
+      isValid = false;
+    }
+
+    return isValid;
+  };
+
+  const handlewaitlist = async (e) => {
+    e.preventDefault();
+
+    const isFormValid = validateInput();
+
+    if (!isFormValid) {
+      alert("Please fill in all required fields correctly.");
+      return;
+    } else {
+      try {
+        const response = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstname: name,
+            email: email,
+            message: message,
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.message === "Email already exists in waitlist") {
+            alert("Email already exists in waitlist.");
+          } else if (data.message === "waitlist created successfully") {
+            setEmail("");
+            setName("");
+            setMessage("");
+            alert("Successfully added to the waitlist!");
+          } else {
+            throw new Error("Failed to join the waitlist.");
+          }
+        } else {
+          throw new Error("Failed to create/update waitlist");
+        }
+      } catch (error) {
+        alert(error.message);
+      }
+    }
   };
 
   return (
@@ -32,9 +109,9 @@ export function Footer() {
         alt="Background"
       />
       <div className="max-w-7xl   mx-auto  md:justify-start justify-evenly lg:justify-evenly items-center overflow-hidden gap-8 bg-black lg:flex lg:flex-row flex flex-col p-4">
-        <div className=" flex-col items-start w-fit lg:gap-[13px] gap-8 inline-flex ">
+        <div className=" flex-col flex items-start w-fit lg:gap-[13px] gap-8  ">
           <Image src={clippath} width={50} height={50} alt="Clippath" />
-          <div className="md:w-[580px] md:h-[261px] flex-col justify-start items-start gap-[21px] inline-flex">
+          <div className="md:w-[580px] flex-col justify-start items-start gap-[21px] inline-flex">
             <div className="md:w-[580px] text-white md:text-4xl text-3xl font-semibold leading-[42px]">
               Join Us in the Cosmic Adventure!
             </div>
@@ -45,15 +122,13 @@ export function Footer() {
             </div>
           </div>
           <div className=" justify-start items-start gap-[17.96px] inline-flex">
-            <Image src={facebooklogo} alt="facebooklogo"></Image>
-
-            <Image src={instalogo} alt="instalogo"></Image>
-
-            <Image src={gitlogo} alt="gitlogo"></Image>
+            <div className="  bg-slate-300 rounded-sm p-[1px] h-6 cursor-pointer z-20 ">
+              <Image src={meta} height={20} width={20} />
+            </div>
           </div>
         </div>
-        <div className=" mx-auto w-full sm:w-[90%]  lg:w-full justify-start sm:justify-center item-start sm:items-center md:items-start   lg:gap-[21.37px] flex flex-col lg:ml-1">
-          <div className=" w-full mx-auto sm:w-[85%]  lg:w-full md:h-[234px] ">
+        <div className=" mx-auto w-full sm:w-[90%]  lg:w-full justify-start sm:justify-center item-start sm:items-center md:items-start   lg:gap-[21px] flex flex-col lg:ml-1">
+          <div className=" w-full mx-auto sm:w-[85%]  lg:w-full  ">
             <div
               onMouseOver={() => setColorEmail("email")}
               onMouseLeave={() => setColorEmail("")}
@@ -64,7 +139,15 @@ export function Footer() {
                 </div>
                 <input
                   type="email"
-                  className="block text-gray-400 hover:placeholder:text-white font-medium  tracking-tight  w-full h-[50px] bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border border-slate-300 border-opacity-20   py-1.5 pl-10   placeholder:text-gray-400  sm:text-sm sm:leading-6"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value), setEmailValid(false);
+                  }}
+                  className={`block text-gray-400 hover:placeholder:text-white font-medium tracking-tight w-full h-[50px] bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border py-1.5 pl-10 placeholder:text-gray-400 sm:text-sm sm:leading-6 ${
+                    emailValid
+                      ? "border-red-500"
+                      : "border-slate-300 border-opacity-20"
+                  }`}
                   placeholder="Your Email Here"
                 />
               </div>
@@ -80,8 +163,16 @@ export function Footer() {
                   />
                 </div>
                 <input
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value), setNameValid(false);
+                  }}
                   type="text"
-                  className="block text-gray-400 hover:placeholder:text-white w-full h-[50px] font-medium  tracking-tight bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border border-slate-300 border-opacity-20   py-1.5 pl-10   placeholder:text-gray-400  sm:text-sm sm:leading-6"
+                  className={`block text-gray-400 hover:placeholder:text-white font-medium tracking-tight w-full h-[50px] bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border py-1.5 pl-10 placeholder:text-gray-400 sm:text-sm sm:leading-6 ${
+                    nameValid
+                      ? "border-red-500"
+                      : "border-slate-300 border-opacity-20"
+                  }`}
                   placeholder="Full Name"
                 />
               </div>
@@ -91,7 +182,15 @@ export function Footer() {
                 <textarea
                   type="text"
                   rows={3}
-                  className="block hover:placeholder:text-white text-gray-400  w-full h-[100px] bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border border-slate-300 border-opacity-20    py-1.5 pl-10   placeholder:text-gray-400  sm:text-sm sm:leading-6"
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value), setMessageValid(false);
+                  }}
+                  className={`block text-gray-400 hover:placeholder:text-white font-medium tracking-tight w-full h-[50px] bg-gradient-to-r from-stone-950 to-stone-950 rounded-lg border py-1.5 pl-10 placeholder:text-gray-400 sm:text-sm sm:leading-6 ${
+                    messageValid
+                      ? "border-red-500"
+                      : "border-slate-300 border-opacity-20"
+                  }`}
                   placeholder="Message Here"
                 />
               </div>
@@ -99,7 +198,10 @@ export function Footer() {
           </div>
           <div className="flex mt-2 sm:mt-0 sm:w-[85%] lg:w-full space-x-2  w-full m-auto items-center text-start justify-start ">
             <div className="gradient-box z-20 cursor-pointer">
-              <button className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover">
+              <button
+                onClick={handlewaitlist}
+                className="gradient-boxbtn w-fit h-11 pl-4 mt-2 sm:mt-0 py-2.5 sm:pr-2 pr-1 rounded-md shadow justify-center items-center inline-flex bg-gradient-normal hover:bg-gradient-hover"
+              >
                 <span class="text-white text-base font-medium leading-normal">
                   Send Email
                 </span>
