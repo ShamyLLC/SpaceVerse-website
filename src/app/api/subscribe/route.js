@@ -21,7 +21,7 @@ export async function POST(request) {
 
   try {
     const hubspotClient = new hubspot.Client({
-      accessToken: "pat-na1-5f54fa60-5c78-4181-be90-9e73b10be6f8",
+      accessToken: "pat-na1-c634c912-fd2f-4205-b88a-508c7d95e8b6",
     });
 
     await hubspotClient.crm.contacts.basicApi
