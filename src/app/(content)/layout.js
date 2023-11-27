@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ContentRootLayout({ children }) {
   return (
-    <div className="bg-black min-h-screen flex flex-col justify-between">
+    <div className="bg-black min-h-screen ">
       <Header />
       {children}
       <Footer />
