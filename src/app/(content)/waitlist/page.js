@@ -75,19 +75,19 @@ const Waitlist = () => {
   };
 
   return (
-    <div className="max-w-7xl m-auto   items-center w-full  bg-black lg:p-[9rem] p-4 ">
+    <div className="max-w-7xl m-auto relative     items-center w-full lg:p-[9rem] p-4 ">
       <Image
         src={Ellipse5}
         layout="fill"
         objectFit="cover"
-        className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+        className=""
         alt="Background"
       />
       <Image
         src={Ellipse6}
         layout="fill"
         objectFit="cover"
-        className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+        className=""
         alt="Background"
       />
 
@@ -95,7 +95,7 @@ const Waitlist = () => {
         src={Ellipse7}
         layout="fill"
         objectFit="cover"
-        className="absolute left-10 opacity-50 border-none mix-blend-initial z-0"
+        className=""
         alt="Background"
       />
       <div className="text-center items-center mx-auto flex  justify-end sm:justify-center">
