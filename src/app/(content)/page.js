@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   return (
-    <main className=" mx-auto  flex-col relative ">
+    <main className="  flex-col relative ">
       <FadeIn>
         <div className="w-full lg:h-[910px] h-[450px] relative flex justify-center items-center  z-10">
           {isPlaying || vedio ? (
@@ -138,8 +138,8 @@ export default function Home() {
             alt="Background"
           />
 
-          <div className="relative  ">
-            <div className="max-w-7xl relative mx-auto">
+          <div className="relative max-w-7xl mx-auto p-4    ">
+            <div className="">
               <div className="z-20 max-w-7xl mx-auto p-4 relative flex flex-col justify-center items-center gap-8">
                 <Image
                   src={starimg1}
@@ -196,120 +196,116 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="max-w-7xl py-10 mx-auto relative   ">
-            <div className="flex flex-col lg:flex-row justify-center items-start lg:items-center gap-12 p-4 lg:p-0 z-10">
-              {/* Content Section */}
-              <div className="flex flex-col justify-start items-start w-full gap-8">
-                {/* Title and Description */}
+          <div className=" max-w-7xl mx-auto p-4  flex justify-evenly z-10">
+            {/* Content Section */}
+            <div className="flex-col w-fit items-start flex   gap-8">
+              {/* Title and Description */}
 
-                <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
-                  <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
-                    The Promise
-                  </span>
-                </button>
+              <button className="px-4 py-2 bg-transparent rounded-[200px] border-2 border-white border-opacity-10 backdrop-blur-[30px] justify-center items-center gap-2.5 inline-flex">
+                <span className="text-center text-transparent bg-gradient-to-r from-purple-600 to-cyan-400 bg-clip-text text-sm font-medium leading-tight">
+                  The Promise
+                </span>
+              </button>
 
-                <div className="text-white text-3xl lg:text-4xl font-semibold leading-[42px] text-center">
-                  SpaceVerse: Beyond Leisure, A Universe of Learning
-                </div>
+              <div className="text-white text-3xl pl-1 lg:text-4xl font-semibold leading-[42px] text-center">
+                SpaceVerse: Beyond Leisure, A Universe of Learning
+              </div>
 
-                <div className="text-slate-300 text-lg font-normal leading-relaxed text-center">
-                  SpaceVerse is not just a place for leisure; it's a platform
-                  for learning, training, exploration, and experimentation...
-                </div>
-                <div className="flex flex-col lg:flex-row justify-center items-start lg:items-center gap-12 p-4 lg:p-4 z-10">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 w-full lg:max-w-6xl mx-auto">
-                    <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
-                      <Image
-                        src={featurediconlogo}
-                        width={50}
-                        height={50}
-                        alt="featurediconlogo"
-                      ></Image>
-
-                      <div className="h-[164px] flex-col justify-start items-start gap-2 flex">
-                        <div className="text-white text-xl font-semibold leading-[30px]">
-                          Learn
-                        </div>
-                        <div className="text-slate-300 text-sm font-normal leading-[21px]">
-                          SpaceVerse offers an immersive learning experience,
-                          blending curated content with interactive modules on
-                          space science. Dive into topics from star life cycles
-                          to dark matter in a captivating educational setting.
-                        </div>
-                      </div>
-                    </div>
-                    <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
-                      <Image
-                        src={featurediconlogo1}
-                        width={50}
-                        height={50}
-                        alt="featurediconlogo1"
-                      ></Image>
-
-                      <div className="h-[143px] flex-col justify-start items-start gap-2 flex">
-                        <div className="text-white text-xl font-semibold leading-[30px]">
-                          Train
-                        </div>
-                        <div className="text-slate-300 text-sm font-normal leading-[21px]">
-                          Step into the world of astronaut training in
-                          SpaceVerse. Undergo realistic space mission
-                          simulations, understanding the physical and mental
-                          challenges of space travel with expert guidance.
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
-                      <Image
-                        src={featurediconlogo2}
-                        width={50}
-                        height={50}
-                        l
-                        alt="featurediconlogo2"
-                      ></Image>
-
-                      <div className="h-[143px] flex-col justify-start items-start gap-2 flex">
-                        <div className="text-white text-xl font-semibold leading-[30px]">
-                          Explore
-                        </div>
-                        <div className="text-slate-300 text-sm font-normal leading-[21px]">
-                          Venture into the cosmos with SpaceVerse. From the
-                          Moon's craters to Mars' dunes, embark on journeys
-                          across the universe, witnessing its wonders firsthand.
-                        </div>
-                      </div>
-                    </div>
-                    <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
-                      <Image
-                        src={featurediconlogo3}
-                        width={50}
-                        height={50}
-                        alt="featurediconlogo"
-                      ></Image>
-
-                      <div className="h-[143px] flex-col justify-start items-start gap-2 flex">
-                        <div className="text-white text-xl font-semibold leading-[30px]">
-                          Experiment
-                        </div>
-                        <div className="text-slate-300 text-sm font-normal leading-[21px]">
-                          Dive into SpaceVerse's cosmic laboratory. Engage with
-                          astrophysical studies and advanced simulations,
-                          fostering hands-on space research and discovery.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="w-full flex justify-center items-center p-4 lg:p-0">
+              <div className="text-slate-300 text-lg font-normal leading-relaxed text-center">
+                SpaceVerse is not just a place for leisure; it's a platform for
+                learning, training, exploration, and experimentation...
+              </div>
+              <div className="flex flex-col lg:flex-row justify-center items-center max-w-7xl mx-auto lg:items-center gap-12 p-4 lg:p-4 z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4  ">
+                  <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
                     <Image
-                      src={astauranut}
-                      width={581}
-                      height={512}
-                      layout="responsive"
-                      objectFit="cover"
-                      className="rounded-xl"
-                      alt="Astronaut"
-                    />
+                      src={featurediconlogo}
+                      width={50}
+                      height={50}
+                      alt="featurediconlogo"
+                    ></Image>
+
+                    <div className=" flex-col justify-start items-start gap-2 flex">
+                      <div className="text-white text-xl font-semibold leading-[30px]">
+                        Learn
+                      </div>
+                      <div className="text-slate-300 text-sm font-normal leading-[21px]">
+                        SpaceVerse offers an immersive learning experience,
+                        blending curated content with interactive modules on
+                        space science. Dive into topics from star life cycles to
+                        dark matter in a captivating educational setting.
+                      </div>
+                    </div>
                   </div>
+                  <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
+                    <Image
+                      src={featurediconlogo1}
+                      width={50}
+                      height={50}
+                      alt="featurediconlogo1"
+                    ></Image>
+
+                    <div className=" flex-col justify-start items-start gap-2 flex">
+                      <div className="text-white text-xl font-semibold leading-[30px]">
+                        Train
+                      </div>
+                      <div className="text-slate-300 text-sm font-normal leading-[21px]">
+                        Step into the world of astronaut training in SpaceVerse.
+                        Undergo realistic space mission simulations,
+                        understanding the physical and mental challenges of
+                        space travel with expert guidance.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
+                    <Image
+                      src={featurediconlogo2}
+                      width={50}
+                      height={50}
+                      l
+                      alt="featurediconlogo2"
+                    ></Image>
+
+                    <div className=" flex-col justify-start items-start gap-2 flex">
+                      <div className="text-white text-xl font-semibold leading-[30px]">
+                        Explore
+                      </div>
+                      <div className="text-slate-300 text-sm font-normal leading-[21px]">
+                        Venture into the cosmos with SpaceVerse. From the Moon's
+                        craters to Mars' dunes, embark on journeys across the
+                        universe, witnessing its wonders firsthand.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grow shrink basis-0 flex-col justify-start items-start gap-5 inline-flex">
+                    <Image
+                      src={featurediconlogo3}
+                      width={50}
+                      height={50}
+                      alt="featurediconlogo"
+                    ></Image>
+
+                    <div className=" flex-col justify-start items-start gap-2 flex">
+                      <div className="text-white text-xl font-semibold leading-[30px]">
+                        Experiment
+                      </div>
+                      <div className="text-slate-300 text-sm font-normal leading-[21px]">
+                        Dive into SpaceVerse's cosmic laboratory. Engage with
+                        astrophysical studies and advanced simulations,
+                        fostering hands-on space research and discovery.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mx-auto  xl:w-[150%] w-fit  p-4 lg:p-0">
+                  <Image
+                    width={581}
+                    height={521}
+                    src={astauranut}
+                    className="rounded-xl"
+                    alt="Astronaut"
+                  />
                 </div>
               </div>
             </div>
@@ -549,7 +545,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="xl:w-[635.63px] xl:h-[300px] max-w-fit justify-center items-start sm:items-start lg:items-start  lg:gap-[21.37px] xl:flex-row flex flex-col md:w-full lg:ml-1">
+            <div className="relative max-w-fit justify-center items-start sm:items-start lg:items-start  lg:gap-[21.37px] xl:flex-row flex flex-col md:w-full lg:ml-1">
               <Image src={avatar} style={{ zIndex: "30" }} alt="avatar"></Image>
               <div className="lg:w-auto md:w-[580px] flex-col justify-start items-start  gap-[21px] inline-flex">
                 <div className=" flex-col justify-start items-start gap-[3.59px] flex">

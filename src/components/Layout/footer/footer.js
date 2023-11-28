@@ -98,7 +98,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative mt-5  " aria-labelledby="footer-heading">
+    <footer className="relative mt-5 bg-black  " aria-labelledby="footer-heading">
       <Image
         src={Ellipsenew1}
         layout="fill"

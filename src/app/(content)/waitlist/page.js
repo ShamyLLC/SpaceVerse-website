@@ -75,19 +75,20 @@ const Waitlist = () => {
   };
 
   return (
-    <div className="max-w-7xl m-auto relative     items-center w-full lg:p-[9rem] p-4 ">
+    <div className=" lg:pt-0       w-full  p-4 ">
       <Image
         src={Ellipse5}
         layout="fill"
         objectFit="cover"
-        className=""
-        alt="Background"
+        className= "  "   
+        alt="Background1"
+      
       />
       <Image
         src={Ellipse6}
         layout="fill"
         objectFit="cover"
-        className=""
+        className=" "
         alt="Background"
       />
 
@@ -95,10 +96,10 @@ const Waitlist = () => {
         src={Ellipse7}
         layout="fill"
         objectFit="cover"
-        className=""
+        className=" "
         alt="Background"
-      />
-      <div className="text-center items-center mx-auto flex  justify-end sm:justify-center">
+      />  
+       <div className="text-center items-center mx-auto flex  justify-end sm:justify-center">
         {toast && (
           <NewToast
             message={toast.message}
@@ -107,7 +108,7 @@ const Waitlist = () => {
           />
         )}
       </div>
-      <div className="p-8  mt-2 lg:max-w-md   mx-auto flex flex-col justify-center items-center text-center h-auto relative bg-gradient-to-br from-black to-black rounded-lg border-2 border-white border-opacity-40 backdrop-blur-[60px]">
+      <div className="p-8  mt-2    flex max-w-7xl w-fit mx-auto my-auto  justify-center  flex-col  items-center text-center  relative bg-gradient-to-br from-black to-black rounded-lg border-2 border-white border-opacity-40 backdrop-blur-[60px]">
         <div className="flex flex-col justify-center sm:justify-start items-center gap-4 mb-4 sm:mb-0">
           <Image src={clippath} width={60} height={60} alt="Clippath" />
           <div className="w-full text-white text-lg lg:text-xl font-bold leading-none">
